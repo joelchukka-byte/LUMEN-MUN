@@ -7,11 +7,13 @@ import {
   getScheduleDays,
   getPricing,
   getRegistrationSettings,
+  getFounders,
 } from '@/lib/content';
 import { imageOr } from '@/lib/image';
 import { rupees } from '@/lib/format';
 import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
 import { Opening } from '@/components/site/Opening';
+import { Founders } from '@/components/site/Founders';
 
 /*
  * Rendered per request rather than prerendered: this page reads from Postgres,
@@ -20,12 +22,13 @@ import { Opening } from '@/components/site/Opening';
 export const dynamic = 'force-dynamic';
 
 export default async function HomePage() {
-  const [home, committees, days, pricing, settings] = await Promise.all([
+  const [home, committees, days, pricing, settings, founders] = await Promise.all([
     getHomeContent(),
     getCommittees(),
     getScheduleDays(),
     getPricing(),
     getRegistrationSettings(),
+    getFounders(),
   ]);
 
   const lead = committees[0];
@@ -93,6 +96,13 @@ export default async function HomePage() {
               <p className="figure__note">Kit, meals and socials included</p>
             </RevealItem>
           </RevealGroup>
+        </div>
+      </section>
+
+      {/* ── 3. Founders ────────────────────────────── the two who lead it ── */}
+      <section className="section--sm">
+        <div className="container">
+          <Founders people={founders} aside="Edition I" />
         </div>
       </section>
 

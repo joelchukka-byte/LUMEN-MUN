@@ -72,6 +72,25 @@ export const getSecretariat = cache(async () => {
     .orderBy(asc(secretariat.sort), asc(secretariat.id));
 });
 
+export type Founder = Awaited<ReturnType<typeof getSecretariat>>[number];
+
+/**
+ * The two roles that head the conference, in the order they are shown.
+ *
+ * Matched on role rather than a dedicated column, so the roster stays a plain
+ * list. Renaming either role in the admin console moves that person out of the
+ * founders block and back into the grid, which is the behaviour you would
+ * expect from renaming a role.
+ */
+export const FOUNDER_ROLES = ['SECRETARY-GENERAL', 'DIRECTOR-GENERAL'] as const;
+
+export const getFounders = cache(async (): Promise<Founder[]> => {
+  const people = await getSecretariat();
+  return FOUNDER_ROLES.map((role) =>
+    people.find((p) => p.role.toUpperCase() === role)
+  ).filter((p): p is Founder => Boolean(p));
+});
+
 /** Grouped for the team page, in the department order the roster defines. */
 export const getSecretariatByDepartment = cache(async (): Promise<Department[]> => {
   const rows = await getSecretariat();
