@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #520823; color: #EDE6E2; font-family: Archivo, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #F9A61A; text-decoration: none; }
+  a:hover { color: #FFC257; }
+  ::selection { background: #F9A61A; color: #14090C; }
+  input, select, textarea, button { font-family: inherit; }
+  @keyframes lm-sweep { 0% { transform: translateY(-100%); } 45% { transform: translateY(0); } 55% { transform: translateY(0); } 100% { transform: translateY(100%); } }
+  @keyframes lm-scan { 0% { transform: translateY(0); opacity: 0; } 10% { opacity: 0.55; } 100% { transform: translateY(560px); opacity: 0; } }
+  @keyframes lm-pulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+  @keyframes lm-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes lm-spin { to { transform: rotate(360deg); } }
+  @keyframes lm-drift-1 { to { transform: translateY(-1000px); } }
+  @keyframes lm-drift-2 { to { transform: translateY(-780px); } }
+  @keyframes lm-drift-3 { to { transform: translateY(-620px); } }
+  @keyframes lm-twinkle { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.9; } }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: radial-gradient(1300px 800px at 4% 4%, rgba(0,0,0,0.34), transparent 64%), #520823; position: relative; overflow: hidden;">
+
+  <div style="position: absolute; inset: 0; pointer-events: none; opacity: 0.32; background-image: linear-gradient(rgba(237,230,226,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(237,230,226,0.05) 1px, transparent 1px); background-size: 88px 88px;"></div>
+
+  <div style="position: absolute; inset: -1000px 0 -1000px; pointer-events: none; background-image: radial-gradient(1.9px 1.9px at 59.7% 29.9%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(2.2px 2.2px at 67.2% 52.9%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(1.5px 1.5px at 7.5% 99.7%, rgba(255,255,255,0.95), transparent 62%), radial-gradient(1.7px 1.7px at 99.3% 5.9%, rgba(255,255,255,0.95), transparent 62%), radial-gradient(2.3px 2.3px at 7.2% 67.4%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(1.9px 1.9px at 74.1% 6.4%, rgba(255,255,255,0.8), transparent 62%), radial-gradient(1.3px 1.3px at 20.4% 89.2%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(2.1px 2.1px at 14.6% 2.7%, rgba(255,236,228,0.9), transparent 62%), radial-gradient(2.2px 2.2px at 86.3% 81.8%, rgba(255,236,228,0.9), transparent 62%), radial-gradient(1.4px 1.4px at 3.6% 33.9%, rgba(255,236,228,0.9), transparent 62%), radial-gradient(2.1px 2.1px at 38.3% 29.9%, rgba(255,255,255,0.8), transparent 62%), radial-gradient(1.4px 1.4px at 87.4% 55.8%, rgba(255,255,255,0.8), transparent 62%), radial-gradient(1.6px 1.6px at 57.4% 41.5%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(2.1px 2.1px at 60.1% 35.3%, rgba(255,236,228,0.9), transparent 62%), radial-gradient(1.5px 1.5px at 39.9% 57.4%, rgba(255,255,255,0.95), transparent 62%), radial-gradient(1.7px 1.7px at 59.1% 52.5%, rgba(255,255,255,0.8), transparent 62%), radial-gradient(2.1px 2.1px at 45.2% 8%, rgba(255,255,255,0.95), transparent 62%), radial-gradient(1.9px 1.9px at 12.1% 85%, rgba(255,236,228,0.9), transparent 62%), radial-gradient(1.8px 1.8px at 93.2% 24.9%, rgba(255,255,255,0.8), transparent 62%), radial-gradient(1.5px 1.5px at 63.2% 68%, rgba(255,255,255,0.95), transparent 62%), radial-gradient(1.5px 1.5px at 61.7% 0%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(1.6px 1.6px at 76.6% 43.2%, rgba(255,236,228,0.9), transparent 62%), radial-gradient(2.2px 2.2px at 25.4% 29.2%, rgba(255,255,255,0.8), transparent 62%), radial-gradient(2.3px 2.3px at 59.5% 5.9%, rgba(255,236,228,0.9), transparent 62%), radial-gradient(2.2px 2.2px at 44.8% 17.4%, rgba(255,255,255,0.8), transparent 62%), radial-gradient(2.1px 2.1px at 22.1% 45.5%, rgba(255,255,255,0.8), transparent 62%), radial-gradient(1.3px 1.3px at 0.1% 42.1%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(1.9px 1.9px at 27.8% 57.6%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(1.5px 1.5px at 72.1% 97.4%, rgba(255,255,255,0.95), transparent 62%), radial-gradient(2.1px 2.1px at 49.5% 39.4%, rgba(255,236,228,0.9), transparent 62%), radial-gradient(1.8px 1.8px at 94.4% 77.9%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(2.3px 2.3px at 39% 58.4%, rgba(255,255,255,0.8), transparent 62%), radial-gradient(2.3px 2.3px at 33.8% 74.4%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(1.6px 1.6px at 18% 24.6%, rgba(255,255,255,0.95), transparent 62%), radial-gradient(2.2px 2.2px at 13.6% 66.2%, rgba(255,255,255,0.95), transparent 62%), radial-gradient(1.4px 1.4px at 55.2% 28.5%, rgba(255,236,228,0.9), transparent 62%), radial-gradient(2.3px 2.3px at 64.3% 91.7%, rgba(255,255,255,0.95), transparent 62%), radial-gradient(2.2px 2.2px at 68.1% 11.9%, rgba(255,255,255,0.8), transparent 62%), radial-gradient(1.3px 1.3px at 31.2% 69.3%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(1.9px 1.9px at 35.5% 27.6%, rgba(255,255,255,0.8), transparent 62%), radial-gradient(1.7px 1.7px at 55.6% 93.2%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(2px 2px at 7.4% 58.5%, rgba(255,255,255,0.95), transparent 62%), radial-gradient(1.9px 1.9px at 60.8% 76.7%, rgba(255,255,255,0.95), transparent 62%), radial-gradient(1.7px 1.7px at 89.6% 47.6%, rgba(255,222,210,0.85), transparent 62%), radial-gradient(2.3px 2.3px at 75.6% 15.7%, rgba(255,255,255,0.8), transparent 62%), radial-gradient(1.3px 1.3px at 9.7% 21.9%, rgba(255,222,210,0.85), transparent 62%); background-size: 1000px 1000px; animation: lm-drift-1 120s linear infinite;"></div>
+  <div style="position: absolute; inset: -780px 0; pointer-events: none; background-image: radial-gradient(1.5px 1.5px at 76.2% 2.9%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.2px 1.2px at 54.9% 39.2%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1px 1px at 59.1% 11.8%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1.5px 1.5px at 12.1% 82.6%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.6px 1.6px at 26.9% 93.6%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(1.2px 1.2px at 66.8% 75%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(1.5px 1.5px at 97.3% 2.8%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(0.9px 0.9px at 57.4% 51.7%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.4px 1.4px at 29.6% 31.1%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1px 1px at 70.5% 49.2%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1.3px 1.3px at 3.6% 45.5%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(1.1px 1.1px at 8% 16.8%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(1.1px 1.1px at 65.3% 57.2%, rgba(255,255,255,0.65), transparent 62%), radial-gradient(1.3px 1.3px at 29.2% 51.3%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1.4px 1.4px at 42.7% 70.4%, rgba(255,255,255,0.65), transparent 62%), radial-gradient(1px 1px at 81.1% 95%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(1.5px 1.5px at 85.9% 82.2%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(1.1px 1.1px at 68% 87.2%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.2px 1.2px at 46.3% 1.1%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(1.1px 1.1px at 97.5% 7.3%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.1px 1.1px at 47.8% 69.5%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(1.1px 1.1px at 62.6% 0.6%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1px 1px at 53.4% 78.5%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(0.9px 0.9px at 81.7% 13.6%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.5px 1.5px at 65.6% 60.9%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.5px 1.5px at 59.7% 58.1%, rgba(255,255,255,0.65), transparent 62%), radial-gradient(1.3px 1.3px at 74% 17.2%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(1.6px 1.6px at 88.3% 1.9%, rgba(255,255,255,0.65), transparent 62%), radial-gradient(0.9px 0.9px at 81.3% 94.4%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(1.3px 1.3px at 74.1% 90.4%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(0.9px 0.9px at 24.9% 63.7%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1px 1px at 44% 25.2%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.4px 1.4px at 7.6% 42.7%, rgba(255,255,255,0.65), transparent 62%), radial-gradient(1.4px 1.4px at 57.3% 8.4%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.1px 1.1px at 29.4% 94.4%, rgba(255,255,255,0.65), transparent 62%), radial-gradient(1.1px 1.1px at 71.5% 59.1%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1.4px 1.4px at 59.7% 41.2%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.4px 1.4px at 23.3% 26.3%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.5px 1.5px at 40.8% 96.6%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.5px 1.5px at 26.5% 1.3%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1px 1px at 92.2% 80.3%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1px 1px at 3.5% 69.6%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.2px 1.2px at 6% 48.5%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1px 1px at 63.3% 52.4%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1.2px 1.2px at 77% 16.4%, rgba(232,32,58,0.7), transparent 62%), radial-gradient(1.5px 1.5px at 24.7% 74.1%, rgba(255,140,130,0.8), transparent 62%), radial-gradient(1px 1px at 71.1% 84.2%, rgba(255,255,255,0.65), transparent 62%), radial-gradient(1.5px 1.5px at 85.2% 62.9%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1.5px 1.5px at 58.3% 77.1%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(0.9px 0.9px at 67% 84.4%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1.1px 1.1px at 11.7% 64.2%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1.4px 1.4px at 57% 16.5%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1.6px 1.6px at 71.9% 8.7%, rgba(255,255,255,0.65), transparent 62%), radial-gradient(1.3px 1.3px at 68.8% 88%, rgba(249,166,26,0.75), transparent 62%), radial-gradient(1px 1px at 26.6% 92.9%, rgba(255,255,255,0.65), transparent 62%), radial-gradient(1.2px 1.2px at 5.7% 94.8%, rgba(255,255,255,0.65), transparent 62%), radial-gradient(1.2px 1.2px at 44.3% 71.8%, rgba(255,255,255,0.65), transparent 62%), radial-gradient(1.3px 1.3px at 28.5% 93.7%, rgba(249,166,26,0.75), transparent 62%); background-size: 780px 780px; animation: lm-drift-2 200s linear infinite, lm-twinkle 7s ease-in-out infinite;"></div>
+  <div style="position: absolute; inset: -620px 0; pointer-events: none; opacity: 0.7; background-image: radial-gradient(0.9px 0.9px at 47.6% 2.8%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(1px 1px at 99.6% 43.7%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1px 1px at 39% 82.6%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.8px 0.8px at 70.5% 98.8%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(1.2px 1.2px at 22% 17.6%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1.2px 1.2px at 35.2% 7.5%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(1.1px 1.1px at 76.1% 27.5%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1.1px 1.1px at 84.7% 85.5%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(0.7px 0.7px at 77% 51.7%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(1px 1px at 69.6% 93.9%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(1.2px 1.2px at 89.7% 1.1%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.7px 0.7px at 99.9% 18.3%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(1px 1px at 3.5% 67.6%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.8px 0.8px at 10% 8%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(1px 1px at 62.9% 60%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1.1px 1.1px at 11.9% 27.9%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.7px 0.7px at 68.8% 87.9%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(0.7px 0.7px at 85.8% 26.1%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(1px 1px at 21.7% 50.8%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.9px 0.9px at 11.8% 60.4%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(0.7px 0.7px at 93.4% 48.7%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(1.1px 1.1px at 20.7% 0.9%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(0.8px 0.8px at 6% 27.7%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1.2px 1.2px at 2.9% 73.4%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(1px 1px at 69.8% 90%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(1.1px 1.1px at 74.7% 58%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(1px 1px at 47% 30.1%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.6px 0.6px at 86.3% 31.8%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(1px 1px at 80.6% 86.9%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(1.2px 1.2px at 95.3% 9.7%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.8px 0.8px at 91.3% 79%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.9px 0.9px at 8.8% 77.6%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.8px 0.8px at 38.7% 43.9%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.7px 0.7px at 28.5% 54.2%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1.1px 1.1px at 97.2% 67.7%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.9px 0.9px at 5.5% 3.5%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(0.8px 0.8px at 91.8% 49.1%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1px 1px at 29.1% 30.5%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.9px 0.9px at 10.7% 12.1%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.9px 0.9px at 25.4% 15%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1.1px 1.1px at 67.8% 71.4%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.9px 0.9px at 9.8% 53%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1.1px 1.1px at 80.7% 82.2%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1px 1px at 2% 56.4%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(1px 1px at 68.3% 87.4%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.9px 0.9px at 2.4% 46.5%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.9px 0.9px at 66.6% 34.6%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.8px 0.8px at 40.5% 85.5%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.7px 0.7px at 22.1% 40.4%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1.1px 1.1px at 56.1% 30.8%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.9px 0.9px at 2.5% 47.1%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1.1px 1.1px at 0.7% 58.5%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.9px 0.9px at 17.8% 99.9%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.8px 0.8px at 34.8% 28.7%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.9px 0.9px at 43.4% 19.4%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(0.7px 0.7px at 58% 44.1%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(1px 1px at 18.1% 64.6%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(0.9px 0.9px at 90.5% 61%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1.2px 1.2px at 96.7% 98.6%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.6px 0.6px at 58.6% 73.5%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.7px 0.7px at 9.9% 14.4%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(0.8px 0.8px at 7.3% 70%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(1px 1px at 66.5% 17.6%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1.2px 1.2px at 90.8% 41.6%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(1.1px 1.1px at 55.6% 94.5%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(1.2px 1.2px at 80.7% 9.8%, rgba(255,255,255,0.38), transparent 62%), radial-gradient(1.2px 1.2px at 50.2% 73.2%, rgba(255,210,200,0.45), transparent 62%), radial-gradient(1px 1px at 44.8% 90.1%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.6px 0.6px at 99.3% 25.7%, rgba(255,255,255,0.5), transparent 62%), radial-gradient(0.8px 0.8px at 13.1% 15.5%, rgba(255,210,200,0.45), transparent 62%); background-size: 620px 620px; animation: lm-drift-3 300s linear infinite, lm-twinkle 11s ease-in-out infinite;"></div>
+
+  <sc-if value="{{ sweeping }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; z-index: 90; pointer-events: none; background: linear-gradient(180deg, rgba(10,7,8,0) 0%, rgba(74,13,32,0.92) 38%, rgba(249,166,26,0.14) 50%, rgba(74,13,32,0.92) 62%, rgba(10,7,8,0) 100%); animation: lm-sweep 620ms cubic-bezier(0.65,0,0.35,1) both;"></div>
+  </sc-if>
+
+  <header style="position: sticky; top: 0; z-index: 60; backdrop-filter: blur(14px); background: rgba(40,4,17,0.88); border-bottom: 1px solid rgba(249,166,26,0.16);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 28px; height: 76px; display: flex; align-items: center; gap: 16px;">
+      <div onClick="{{ goHome }}" style="display: flex; align-items: center; gap: 12px; cursor: pointer; flex: none;" style-hover="opacity: 0.86">
+        <div style="position: relative; width: 52px; height: 52px; flex: none;">
+          
+          <img src="uploads/1000396282.jpg" alt="Lumen MUN" style="position: relative; width: 52px; height: 52px; object-fit: contain; display: block; image-rendering: -webkit-optimize-contrast; -webkit-mask-image: radial-gradient(closest-side, #000 74%, rgba(0,0,0,0.6) 88%, transparent 99%); mask-image: radial-gradient(closest-side, #000 74%, rgba(0,0,0,0.6) 88%, transparent 99%);" />
+        </div>
+        <div>
+          <div style="font-size: 16px; font-weight: 800; letter-spacing: 0.1em; line-height: 1; white-space: nowrap;">LUMEN MUN</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.28em; color: rgba(237,230,226,0.74); margin-top: 4px; white-space: nowrap;">EDITION I · GUNTUR</div>
+        </div>
+      </div>
+
+      <nav style="display: flex; align-items: center; gap: 2px; margin-left: auto; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; flex-wrap: nowrap; min-width: 0; white-space: nowrap;">
+        <div onMouseEnter="{{ openConference }}" onMouseLeave="{{ closeMenu }}" style="position: relative; padding: 10px 10px; cursor: default; color: rgba(237,230,226,0.72);" style-hover="color: #FFFFFF">
+          Conference <span style="font-family: 'IBM Plex Mono', monospace; opacity: 0.5;">▾</span>
+          <sc-if value="{{ inConference }}" hint-placeholder-val="{{ false }}"><div style="position: absolute; left: 14px; right: 22px; bottom: 0; height: 2px; background: #E8203A; box-shadow: 0 0 12px rgba(232,32,58,0.9);"></div></sc-if>
+          <sc-if value="{{ menuConference }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 100%; left: 0; width: 236px; padding: 8px; background: rgba(42,5,18,0.98); border: 1px solid rgba(249,166,26,0.22); box-shadow: 0 24px 60px rgba(0,0,0,0.6); animation: lm-rise 180ms ease both; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);">
+              <div onClick="{{ goAbout }}" style="padding: 11px 12px; cursor: pointer; color: rgba(237,230,226,0.8); display: flex; justify-content: space-between; gap: 10px;" style-hover="background: rgba(249,166,26,0.1); color: #FFFFFF">About<span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; opacity: 0.4;">01</span></div>
+              <div onClick="{{ goCommittees }}" style="padding: 11px 12px; cursor: pointer; color: rgba(237,230,226,0.8); display: flex; justify-content: space-between; gap: 10px;" style-hover="background: rgba(249,166,26,0.1); color: #FFFFFF">Committees<span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; opacity: 0.4;">02</span></div>
+              <div onClick="{{ goSchedule }}" style="padding: 11px 12px; cursor: pointer; color: rgba(237,230,226,0.8); display: flex; justify-content: space-between; gap: 10px;" style-hover="background: rgba(249,166,26,0.1); color: #FFFFFF">Schedule<span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; opacity: 0.4;">03</span></div>
+            </div>
+          </sc-if>
+        </div>
+
+        <div onMouseEnter="{{ openDelegates }}" onMouseLeave="{{ closeMenu }}" style="position: relative; padding: 10px 10px; cursor: default; color: rgba(237,230,226,0.72);" style-hover="color: #FFFFFF">
+          Delegates <span style="font-family: 'IBM Plex Mono', monospace; opacity: 0.5;">▾</span>
+          <sc-if value="{{ inDelegates }}" hint-placeholder-val="{{ false }}"><div style="position: absolute; left: 14px; right: 22px; bottom: 0; height: 2px; background: #E8203A; box-shadow: 0 0 12px rgba(232,32,58,0.9);"></div></sc-if>
+          <sc-if value="{{ menuDelegates }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 100%; left: 0; width: 236px; padding: 8px; background: rgba(42,5,18,0.98); border: 1px solid rgba(249,166,26,0.22); box-shadow: 0 24px 60px rgba(0,0,0,0.6); animation: lm-rise 180ms ease both; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);">
+              <div onClick="{{ goRegister }}" style="padding: 11px 12px; cursor: pointer; color: rgba(237,230,226,0.8);" style-hover="background: rgba(249,166,26,0.1); color: #FFFFFF">Registration</div>
+              <div onClick="{{ goFaq }}" style="padding: 11px 12px; cursor: pointer; color: rgba(237,230,226,0.8);" style-hover="background: rgba(249,166,26,0.1); color: #FFFFFF">FAQ</div>
+            </div>
+          </sc-if>
+        </div>
+
+        <div onMouseEnter="{{ openPeople }}" onMouseLeave="{{ closeMenu }}" style="position: relative; padding: 10px 10px; cursor: default; color: rgba(237,230,226,0.72);" style-hover="color: #FFFFFF">
+          Community <span style="font-family: 'IBM Plex Mono', monospace; opacity: 0.5;">▾</span>
+          <sc-if value="{{ inPeople }}" hint-placeholder-val="{{ false }}"><div style="position: absolute; left: 14px; right: 22px; bottom: 0; height: 2px; background: #E8203A; box-shadow: 0 0 12px rgba(232,32,58,0.9);"></div></sc-if>
+          <sc-if value="{{ menuPeople }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 100%; left: 0; width: 236px; padding: 8px; background: rgba(42,5,18,0.98); border: 1px solid rgba(249,166,26,0.22); box-shadow: 0 24px 60px rgba(0,0,0,0.6); animation: lm-rise 180ms ease both; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);">
+              <div onClick="{{ goTeam }}" style="padding: 11px 12px; cursor: pointer; color: rgba(237,230,226,0.8);" style-hover="background: rgba(249,166,26,0.1); color: #FFFFFF">Secretariat</div>
+              <div onClick="{{ goSponsors }}" style="padding: 11px 12px; cursor: pointer; color: rgba(237,230,226,0.8);" style-hover="background: rgba(249,166,26,0.1); color: #FFFFFF">Sponsors &amp; Partners</div>
+              <div onClick="{{ goPress }}" style="padding: 11px 12px; cursor: pointer; color: rgba(237,230,226,0.8);" style-hover="background: rgba(249,166,26,0.1); color: #FFFFFF">Press &amp; Gallery</div>
+              <div onClick="{{ goSystem }}" style="padding: 11px 12px; cursor: pointer; color: rgba(237,230,226,0.76); border-top: 1px solid rgba(237,230,226,0.08); margin-top: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em;" style-hover="background: rgba(249,166,26,0.1); color: #FFFFFF">DESIGN SYSTEM</div>
+            </div>
+          </sc-if>
+        </div>
+
+        <div onClick="{{ goContact }}" style="padding: 10px 10px; cursor: pointer; color: rgba(237,230,226,0.72); position: relative;" style-hover="color: #FFFFFF">
+          Contact
+          <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}"><div style="position: absolute; left: 10px; right: 10px; bottom: 0; height: 2px; background: #E8203A; box-shadow: 0 0 12px rgba(232,32,58,0.9);"></div></sc-if>
+        </div>
+
+        <div onClick="{{ goRegister }}" style="margin-left: 8px; flex: none; padding: 12px 18px; background: linear-gradient(135deg, #E8203A, #C8102E 55%, #7E0A1C); color: #FFF2EC; font-weight: 700; letter-spacing: 0.12em; cursor: pointer; clip-path: polygon(0 0, calc(100% - 11px) 0, 100% 11px, 100% 100%, 11px 100%, 0 calc(100% - 11px)); box-shadow: 0 0 0 rgba(249,166,26,0);" style-hover="box-shadow: 0 0 26px rgba(200,16,46,0.55); transform: translateY(-1px)">Register</div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HOME ===================== -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main style="position: relative;">
+    <section style="max-width: 1280px; margin: 0 auto; padding: 96px 40px 72px; position: relative;">
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: center; gap: 32px;">
+      <div>
+      <div style="display: flex; align-items: center; gap: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3em; color: #F9A61A;">
+        <span style="width: 8px; height: 8px; background: #F9A61A; border-radius: 50%; box-shadow: 0 0 12px rgba(249,166,26,0.9); animation: lm-pulse 2.4s ease-in-out infinite;"></span>
+        EDITION I · GUNTUR, ANDHRA PRADESH
+      </div>
+
+      <h1 style="font-size: clamp(64px, 8.6vw, 124px); line-height: 0.86; font-weight: 800; letter-spacing: -0.04em; margin: 30px 0 0;">Lumen <span style="background: linear-gradient(100deg, #FF5B4A, #C8102E 48%, #F9A61A); -webkit-background-clip: text; background-clip: text; color: transparent;">MUN</span></h1>
+
+      <p style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.34em; color: rgba(237,230,226,0.6); margin: 30px 0 0;">LUMINATE . DEBATE . INSPIRE</p>
+
+      <p style="max-width: 560px; font-size: 18px; line-height: 1.65; color: rgba(237,230,226,0.72); margin: 26px 0 0; text-wrap: pretty;">Three hundred delegates. Three committees. One inaugural conference built for the standard of debate Guntur has been waiting for — rigorous procedure, substantive agendas, and a dais that expects your best.</p>
+
+      <div style="display: flex; gap: 16px; margin-top: 42px;">
+        <div onClick="{{ goRegister }}" style="padding: 18px 34px; background: linear-gradient(135deg, #E8203A, #C8102E 55%, #7E0A1C); color: #FFF2EC; font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));" style-hover="box-shadow: 0 0 34px rgba(200,16,46,0.6); transform: translateY(-2px)">Register your delegation</div>
+        <div onClick="{{ goCommittees }}" style="padding: 18px 34px; border: 1px solid rgba(249,166,26,0.4); color: #F9A61A; font-weight: 600; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));" style-hover="background: rgba(249,166,26,0.1); border-color: #F9A61A">View committees</div>
+      </div>
+
+      </div>
+      <img src="uploads/1000396282.jpg" alt="Lumen MUN crest" style="width: 100%; max-width: 760px; min-width: 0; aspect-ratio: 1 / 1; object-fit: contain; image-rendering: -webkit-optimize-contrast; justify-self: end; -webkit-mask-image: radial-gradient(closest-side, #000 74%, rgba(0,0,0,0.6) 88%, transparent 99%); mask-image: radial-gradient(closest-side, #000 74%, rgba(0,0,0,0.6) 88%, transparent 99%);" />
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 88px; background: rgba(249,166,26,0.16); border: 1px solid rgba(249,166,26,0.16);">
+        <div style="background: rgba(0,0,0,0.32); padding: 26px 24px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(237,230,226,0.74);">DATES</div>
+          <div style="font-size: 26px; font-weight: 700; margin-top: 12px; color: #F9A61A;">To be announced</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(237,230,226,0.72); margin-top: 6px;">RELEASING SHORTLY</div>
+        </div>
+        <div style="background: rgba(0,0,0,0.32); padding: 26px 24px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(237,230,226,0.74);">VENUE</div>
+          <div style="font-size: 26px; font-weight: 700; margin-top: 12px;">Guntur</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(237,230,226,0.72); margin-top: 6px;">ANDHRA PRADESH, IN</div>
+        </div>
+        <div style="background: rgba(0,0,0,0.32); padding: 26px 24px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(237,230,226,0.74);">DELEGATES</div>
+          <div style="font-size: 26px; font-weight: 700; margin-top: 12px;">{{ statDelegates }}</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(237,230,226,0.72); margin-top: 6px;">SEATS PLANNED</div>
+        </div>
+        <div style="background: rgba(0,0,0,0.32); padding: 26px 24px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(237,230,226,0.74);">COMMITTEES</div>
+          <div style="font-size: 26px; font-weight: 700; margin-top: 12px;">{{ statCommittees }}</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(237,230,226,0.72); margin-top: 6px;">AGENDAS PENDING</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 1px solid rgba(237,230,226,0.08); background: linear-gradient(180deg, rgba(0,0,0,0.3), transparent);">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 88px 40px;">
+        <div style="display: grid; grid-template-columns: 340px 1fr; gap: 72px;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.28em; color: #FF6A58;">/ 01 — THE CONFERENCE</div>
+            <h2 style="font-size: 42px; line-height: 1.06; font-weight: 700; letter-spacing: -0.02em; margin: 18px 0 0;">Built for delegates who take the floor seriously</h2>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+            <div style="padding: 30px 26px; background: rgba(0,0,0,0.22); border: 1px solid rgba(237,230,226,0.1); clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));" style-hover="border-color: rgba(249,166,26,0.45); background: rgba(249,166,26,0.05)">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; color: #F9A61A;">01</div>
+              <h3 style="font-size: 19px; font-weight: 700; margin: 18px 0 10px;">Rigorous procedure</h3>
+              <p style="font-size: 14px; line-height: 1.6; color: rgba(237,230,226,0.62); margin: 0;">UNA-USA rules of procedure, trained chairs, and executive board briefings before day one.</p>
+            </div>
+            <div style="padding: 30px 26px; background: rgba(0,0,0,0.22); border: 1px solid rgba(237,230,226,0.1); clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));" style-hover="border-color: rgba(249,166,26,0.45); background: rgba(249,166,26,0.05)">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; color: #F9A61A;">02</div>
+              <h3 style="font-size: 19px; font-weight: 700; margin: 18px 0 10px;">Substantive agendas</h3>
+              <p style="font-size: 14px; line-height: 1.6; color: rgba(237,230,226,0.62); margin: 0;">Every agenda is researched with a study guide, not lifted from a template. Released with committee announcements.</p>
+            </div>
+            <div style="padding: 30px 26px; background: rgba(0,0,0,0.22); border: 1px solid rgba(237,230,226,0.1); clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));" style-hover="border-color: rgba(249,166,26,0.45); background: rgba(249,166,26,0.05)">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; color: #F9A61A;">03</div>
+              <h3 style="font-size: 19px; font-weight: 700; margin: 18px 0 10px;">First-timers welcome</h3>
+              <p style="font-size: 14px; line-height: 1.6; color: rgba(237,230,226,0.62); margin: 0;">A beginner committee, pre-conference training sessions, and delegate handbooks for every school.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 1px solid rgba(237,230,226,0.08);">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 88px 40px;">
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.28em; color: #FF6A58;">/ 02 — COMMITTEES</div>
+            <h2 style="font-size: 42px; font-weight: 700; letter-spacing: -0.02em; margin: 18px 0 0;">Three councils. Agendas under embargo.</h2>
+          </div>
+          <div onClick="{{ goCommittees }}" style="padding: 14px 26px; border: 1px solid rgba(249,166,26,0.4); color: #F9A61A; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; white-space: nowrap;" style-hover="background: rgba(249,166,26,0.1)">All committees →</div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px;">
+          <sc-for list="{{ committeesPreview }}" as="c" hint-placeholder-count="3">
+            <div onClick="{{ goCommittees }}" style="--ret: rgba(249,166,26,0.2); position: relative; padding: 28px 26px 26px; background: linear-gradient(155deg, rgba(0,0,0,0.36), rgba(255,255,255,0.03)); border: 1px solid rgba(237,230,226,0.1); cursor: pointer; overflow: hidden;" style-hover="--ret: #FF5B4A; border-color: rgba(200,16,46,0.6); transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0,0,0,0.45)">
+              <div style="position: absolute; top: 10px; left: 10px; width: 14px; height: 14px; border-top: 1px solid var(--ret); border-left: 1px solid var(--ret);"></div>
+              <div style="position: absolute; bottom: 10px; right: 10px; width: 14px; height: 14px; border-bottom: 1px solid var(--ret); border-right: 1px solid var(--ret);"></div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(237,230,226,0.72);">{{ c.code }}</div>
+              <h3 style="font-size: 22px; font-weight: 700; margin: 14px 0 0; letter-spacing: -0.01em;">{{ c.name }}</h3>
+              <p style="font-size: 13px; line-height: 1.55; color: rgba(237,230,226,0.58); margin: 12px 0 22px; min-height: 60px;">{{ c.blurb }}</p>
+              <div style="display: flex; align-items: center; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; padding-top: 16px; border-top: 1px solid rgba(237,230,226,0.1);">
+                <span style="color: #FF5B4A;">AGENDA: CLASSIFIED</span>
+                <span style="color: rgba(237,230,226,0.72);">STUDY GUIDE PENDING</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 1px solid rgba(237,230,226,0.08); background: rgba(0,0,0,0.24);">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 72px 40px; display: flex; align-items: center; justify-content: space-between; gap: 48px;">
+        <div>
+          <h2 style="font-size: 34px; font-weight: 700; letter-spacing: -0.02em; margin: 0;">Delegate applications open with the agenda release.</h2>
+          <p style="font-size: 15px; color: rgba(237,230,226,0.6); margin: 12px 0 0;">Register interest now — allocations are processed first-come, and school delegations are capped per committee.</p>
+        </div>
+        <div onClick="{{ goRegister }}" style="padding: 20px 40px; background: linear-gradient(135deg, #E8203A, #C8102E 55%, #7E0A1C); color: #FFF2EC; font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; white-space: nowrap; clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));" style-hover="box-shadow: 0 0 34px rgba(200,16,46,0.6); transform: translateY(-2px)">Register interest</div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <!-- ===================== ABOUT ===================== -->
+  <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 40px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3em; color: #FF6A58;">/ ABOUT</div>
+    <h1 style="font-size: 76px; line-height: 0.94; font-weight: 800; letter-spacing: -0.035em; margin: 20px 0 0; max-width: 900px;">Diplomacy, taught by <span style="color: #F9A61A;">doing it properly</span></h1>
+    <p style="max-width: 620px; font-size: 18px; line-height: 1.65; color: rgba(237,230,226,0.7); margin: 28px 0 0;">Lumen MUN is the inaugural Model United Nations conference of Guntur — founded by students who believe a first edition can still be held to a national standard.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 72px;">
+      <div style="padding: 44px 40px; background: linear-gradient(150deg, rgba(0,0,0,0.4), rgba(255,255,255,0.03)); border: 1px solid rgba(249,166,26,0.2); clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.24em; color: #F9A61A;">MISSION</div>
+        <p style="font-size: 22px; line-height: 1.5; margin: 20px 0 0; color: rgba(237,230,226,0.9);">To give every delegate — first-timer or veteran — a committee floor where research is rewarded, procedure is respected, and the debate actually goes somewhere.</p>
+      </div>
+      <div style="padding: 44px 40px; background: rgba(0,0,0,0.22); border: 1px solid rgba(237,230,226,0.1); clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.24em; color: #F9A61A;">VISION</div>
+        <p style="font-size: 22px; line-height: 1.5; margin: 20px 0 0; color: rgba(237,230,226,0.9);">To make Guntur a fixture on the South Indian MUN circuit within three editions — and to build a delegate pipeline that doesn't need to travel to be taken seriously.</p>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 72px; margin-top: 96px; align-items: start;">
+      <div>
+        <h2 style="font-size: 34px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 20px;">What is Model UN?</h2>
+        <p style="font-size: 16px; line-height: 1.72; color: rgba(237,230,226,0.7); margin: 0 0 16px; text-wrap: pretty;">Delegates are assigned a country or character and must argue its position — not their own — through formal debate governed by parliamentary procedure. Caucuses, working papers, draft resolutions, amendments, votes.</p>
+        <p style="font-size: 16px; line-height: 1.72; color: rgba(237,230,226,0.7); margin: 0;">What delegates actually leave with: the ability to hold a room, negotiate against interest, write under pressure, and read a brief faster than they thought possible.</p>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 36px; background: rgba(237,230,226,0.1); border: 1px solid rgba(237,230,226,0.1);">
+          <div style="background: rgba(0,0,0,0.3); padding: 22px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">FORMAT</div><div style="font-size: 17px; font-weight: 600; margin-top: 8px;">UNA-USA procedure</div></div>
+          <div style="background: rgba(0,0,0,0.3); padding: 22px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">DURATION</div><div style="font-size: 17px; font-weight: 600; margin-top: 8px;">Three days</div></div>
+          <div style="background: rgba(0,0,0,0.3); padding: 22px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">ELIGIBILITY</div><div style="font-size: 17px; font-weight: 600; margin-top: 8px;">Grades 8–12 &amp; UG</div></div>
+          <div style="background: rgba(0,0,0,0.3); padding: 22px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">LANGUAGE</div><div style="font-size: 17px; font-weight: 600; margin-top: 8px;">English</div></div>
+        </div>
+      </div>
+      <div style="position: relative; aspect-ratio: 4 / 5; border: 1px solid rgba(249,166,26,0.22); background-image: repeating-linear-gradient(135deg, rgba(249,166,26,0.07) 0 2px, transparent 2px 11px); display: grid; place-items: center; overflow: hidden;">
+        <div style="position: absolute; left: 0; right: 0; top: 0; height: 90px; background: linear-gradient(180deg, rgba(249,166,26,0.22), transparent); animation: lm-scan 7s linear infinite;"></div>
+        <div style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: rgba(237,230,226,0.76); padding: 20px;">[ IMAGE SLOT ]<br /><span style="color: rgba(237,230,226,0.68);">OPENING CEREMONY / GENERAL ASSEMBLY WIDE SHOT</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top: 96px; padding: 48px 44px; border: 1px solid rgba(237,230,226,0.1); background: rgba(0,0,0,0.18);">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.26em; color: #F9A61A;">ORGANISING BODY</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; margin-top: 26px;">
+        <div><h3 style="font-size: 24px; font-weight: 700; margin: 0 0 10px;">Lumen Youth Initiative</h3><p style="font-size: 14px; line-height: 1.6; color: rgba(237,230,226,0.6); margin: 0;">A student-led organisation running debate, public-speaking and policy programmes across Guntur schools.</p></div>
+        <div><h3 style="font-size: 24px; font-weight: 700; margin: 0 0 10px;">Faculty advisory</h3><p style="font-size: 14px; line-height: 1.6; color: rgba(237,230,226,0.6); margin: 0;">Oversight on safeguarding, academic content and delegate welfare from partner-school faculty.</p></div>
+        <div><h3 style="font-size: 24px; font-weight: 700; margin: 0 0 10px;">Secretariat</h3><p style="font-size: 14px; line-height: 1.6; color: rgba(237,230,226,0.6); margin: 0;">A twelve-member secretariat. <span onClick="{{ goTeam }}" style="color: #F9A61A; cursor: pointer; text-decoration: underline;">Meet the team →</span></p></div>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ===================== COMMITTEES ===================== -->
+  <sc-if value="{{ isCommittees }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 40px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3em; color: #FF6A58;">/ COMMITTEES</div>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-top: 20px;">
+      <h1 style="font-size: 76px; line-height: 0.94; font-weight: 800; letter-spacing: -0.035em; margin: 0;">Committees</h1>
+      <div style="display: flex; align-items: center; gap: 12px; padding: 12px 18px; border: 1px solid rgba(224,58,47,0.4); background: rgba(224,58,47,0.08); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: #FF7A6E;">
+        <span style="width: 7px; height: 7px; background: #E03A2F; border-radius: 50%; animation: lm-pulse 2s ease-in-out infinite;"></span>AGENDAS UNDER EMBARGO — RELEASING SHORTLY
+      </div>
+    </div>
+    <p style="max-width: 640px; font-size: 17px; line-height: 1.65; color: rgba(237,230,226,0.68); margin: 26px 0 0;">Three committees spanning global security, human rights and Indian politics. Study guides drop with the agenda announcement; allocations follow within a week of registration close.</p>
+
+    <div style="display: grid; gap: 20px; margin-top: 56px;">
+      <sc-for list="{{ committees }}" as="c" hint-placeholder-count="3">
+        <div style="--ret: rgba(249,166,26,0.2); position: relative; display: grid; grid-template-columns: 300px 1fr; border: 1px solid rgba(237,230,226,0.1); background: rgba(0,0,0,0.2); overflow: hidden;" style-hover="--ret: #FF5B4A; border-color: rgba(200,16,46,0.55); box-shadow: 0 16px 40px rgba(0,0,0,0.4)">
+          <div style="position: absolute; top: 10px; right: 10px; width: 14px; height: 14px; border-top: 1px solid var(--ret); border-right: 1px solid var(--ret);"></div>
+          <div style="position: relative; background-image: repeating-linear-gradient(135deg, rgba(249,166,26,0.08) 0 2px, transparent 2px 10px); border-right: 1px solid rgba(237,230,226,0.1); display: grid; place-items: center; padding: 16px;">
+            <div style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">[ COMMITTEE<br />PHOTO ]</div>
+          </div>
+          <div style="padding: 26px 26px 22px;">
+            <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">
+              {{ c.code }}<span style="color: rgba(237,230,226,0.2);">|</span><span style="color: #F9A61A;">{{ c.level }}</span>
+            </div>
+            <h3 style="font-size: 24px; font-weight: 700; margin: 12px 0 8px; letter-spacing: -0.015em;">{{ c.name }}</h3>
+            <p style="font-size: 13.5px; line-height: 1.6; color: rgba(237,230,226,0.6); margin: 0 0 18px;">{{ c.blurb }}</p>
+            <div style="padding: 14px 16px; border: 1px dashed rgba(249,166,26,0.32); background: rgba(249,166,26,0.05);">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: rgba(237,230,226,0.74);">AGENDA</div>
+              <div style="font-size: 14px; font-weight: 600; color: #F9A61A; margin-top: 6px;">Classified — releasing shortly</div>
+            </div>
+            <div style="display: flex; gap: 24px; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(237,230,226,0.09);">
+              <div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.72);">CHAIRPERSON</div><div style="font-size: 13px; font-weight: 600; margin-top: 5px; color: rgba(237,230,226,0.85);">To be announced</div></div>
+              <div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.72);">VICE-CHAIR</div><div style="font-size: 13px; font-weight: 600; margin-top: 5px; color: rgba(237,230,226,0.85);">To be announced</div></div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ===================== SECRETARIAT ===================== -->
+  <sc-if value="{{ isTeam }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 40px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3em; color: #FF6A58;">/ SECRETARIAT</div>
+    <h1 style="font-size: 76px; line-height: 0.94; font-weight: 800; letter-spacing: -0.035em; margin: 20px 0 0;">The team</h1>
+    <p style="max-width: 600px; font-size: 17px; line-height: 1.65; color: rgba(237,230,226,0.68); margin: 26px 0 0;">Twelve organisers running Edition I. Names and portraits publish alongside the committee announcement.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 56px;">
+      <sc-for list="{{ team }}" as="p" hint-placeholder-count="12">
+        <div style="--ret: rgba(249,166,26,0.18); position: relative; border: 1px solid rgba(237,230,226,0.1); background: rgba(0,0,0,0.2); overflow: hidden;" style-hover="--ret: #FF5B4A; border-color: rgba(200,16,46,0.6); transform: translateY(-3px); box-shadow: 0 16px 36px rgba(0,0,0,0.5)">
+          <div style="position: absolute; top: 8px; left: 8px; width: 12px; height: 12px; border-top: 1px solid var(--ret); border-left: 1px solid var(--ret); z-index: 2;"></div>
+          <div style="position: absolute; top: 8px; right: 8px; width: 12px; height: 12px; border-top: 1px solid var(--ret); border-right: 1px solid var(--ret); z-index: 2;"></div>
+          <div style="aspect-ratio: 1 / 1; background-image: repeating-linear-gradient(135deg, rgba(200,16,46,0.09) 0 2px, transparent 2px 10px); border-bottom: 1px solid rgba(237,230,226,0.1); display: grid; place-items: center;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(237,230,226,0.72);">[ PORTRAIT ]</div>
+          </div>
+          <div style="padding: 16px 16px 18px;">
+            <div style="font-size: 15px; font-weight: 700;">{{ p.name }}</div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #FF5B4A; margin-top: 7px;">{{ p.role }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ===================== REGISTRATION ===================== -->
+  <sc-if value="{{ isRegister }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 40px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3em; color: #FF6A58;">/ REGISTRATION</div>
+    <h1 style="font-size: 76px; line-height: 0.94; font-weight: 800; letter-spacing: -0.035em; margin: 20px 0 0;">Register</h1>
+
+    <div style="display: flex; align-items: center; gap: 0; margin-top: 48px; border: 1px solid rgba(237,230,226,0.1); background: rgba(0,0,0,0.18);">
+      <div style="flex: 1; padding: 20px 24px; border-right: 1px solid rgba(237,230,226,0.1); background: rgba(249,166,26,0.07);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: #F9A61A;">STEP 01 — ACTIVE</div>
+        <div style="font-size: 16px; font-weight: 600; margin-top: 8px;">Choose your track</div>
+      </div>
+      <div style="flex: 1; padding: 20px 24px; border-right: 1px solid rgba(237,230,226,0.1);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.72);">STEP 02</div>
+        <div style="font-size: 16px; font-weight: 600; margin-top: 8px; color: rgba(237,230,226,0.6);">Delegate details &amp; preferences</div>
+      </div>
+      <div style="flex: 1; padding: 20px 24px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.72);">STEP 03</div>
+        <div style="font-size: 16px; font-weight: 600; margin-top: 8px; color: rgba(237,230,226,0.6);">Payment &amp; confirmation</div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 20px;">
+      <sc-if value="{{ trackIndividual }}" hint-placeholder-val="{{ true }}">
+      <div onClick="{{ pickIndividual }}" style="padding: 32px 30px; border: 1px solid rgba(200,16,46,0.6); background: linear-gradient(150deg, rgba(0,0,0,0.4), rgba(255,255,255,0.03)); box-shadow: 0 0 30px rgba(200,16,46,0.18); cursor: pointer; clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));" style-hover="box-shadow: 0 0 40px rgba(200,16,46,0.28)">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #FF5B4A;">TRACK A</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: #FFF2EC; background: linear-gradient(135deg, #E8203A, #C8102E); padding: 4px 10px;">SELECTED</div>
+        </div>
+        <h2 style="font-size: 28px; font-weight: 700; margin: 16px 0 8px;">Individual delegate</h2>
+        <p style="font-size: 14px; line-height: 1.6; color: rgba(237,230,226,0.62); margin: 0;">Apply on your own. Committee and portfolio preferences are submitted in Form A; allocation is confirmed by email.</p>
+      </div>
+      </sc-if>
+      <sc-if value="{{ trackSchool }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ pickIndividual }}" style="padding: 32px 30px; border: 1px solid rgba(237,230,226,0.12); background: rgba(0,0,0,0.2); cursor: pointer; clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));" style-hover="border-color: rgba(200,16,46,0.5); background: rgba(200,16,46,0.05)">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: rgba(237,230,226,0.74);">TRACK A</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(237,230,226,0.72);">SELECT</div>
+        </div>
+        <h2 style="font-size: 28px; font-weight: 700; margin: 16px 0 8px;">Individual delegate</h2>
+        <p style="font-size: 14px; line-height: 1.6; color: rgba(237,230,226,0.62); margin: 0;">Apply on your own. Committee and portfolio preferences are submitted in Form A; allocation is confirmed by email.</p>
+      </div>
+      </sc-if>
+      <sc-if value="{{ trackSchool }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ pickSchool }}" style="padding: 32px 30px; border: 1px solid rgba(200,16,46,0.6); background: linear-gradient(150deg, rgba(0,0,0,0.4), rgba(255,255,255,0.03)); box-shadow: 0 0 30px rgba(200,16,46,0.18); cursor: pointer; clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));" style-hover="box-shadow: 0 0 40px rgba(200,16,46,0.28)">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #FF5B4A;">TRACK B</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: #FFF2EC; background: linear-gradient(135deg, #E8203A, #C8102E); padding: 4px 10px;">SELECTED</div>
+        </div>
+        <h2 style="font-size: 28px; font-weight: 700; margin: 16px 0 8px;">School delegation</h2>
+        <p style="font-size: 14px; line-height: 1.6; color: rgba(237,230,226,0.62); margin: 0;">Five delegates or more, registered by a faculty coordinator in Form B. One invoice, one point of contact, priority allocation.</p>
+      </div>
+      </sc-if>
+      <sc-if value="{{ trackIndividual }}" hint-placeholder-val="{{ true }}">
+      <div onClick="{{ pickSchool }}" style="padding: 32px 30px; border: 1px solid rgba(237,230,226,0.12); background: rgba(0,0,0,0.2); cursor: pointer; clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));" style-hover="border-color: rgba(200,16,46,0.5); background: rgba(200,16,46,0.05)">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: rgba(237,230,226,0.74);">TRACK B</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(237,230,226,0.72);">SELECT</div>
+        </div>
+        <h2 style="font-size: 28px; font-weight: 700; margin: 16px 0 8px;">School delegation</h2>
+        <p style="font-size: 14px; line-height: 1.6; color: rgba(237,230,226,0.62); margin: 0;">Five delegates or more, registered by a faculty coordinator in Form B. One invoice, one point of contact, priority allocation.</p>
+      </div>
+      </sc-if>
+    </div>
+
+    <h2 style="font-size: 34px; font-weight: 700; letter-spacing: -0.02em; margin: 80px 0 8px;">Registration fee</h2>
+    <p style="font-size: 14px; color: rgba(237,230,226,0.76); margin: 0 0 32px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.1em;">FLAT RATE · ALL DELEGATES · INR</p>
+    <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px;">
+      <div style="position: relative; padding: 36px 34px; border: 1px solid rgba(200,16,46,0.55); background: linear-gradient(150deg, rgba(0,0,0,0.4), rgba(255,255,255,0.03)); clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #FF5B4A;">REGULAR REGISTRATION</div>
+        <div style="display: flex; align-items: baseline; gap: 10px; margin: 22px 0 0;">
+          <span style="font-size: 66px; font-weight: 800; letter-spacing: -0.035em; line-height: 1;">₹1,500</span>
+          <span style="font-size: 14px; color: rgba(237,230,226,0.76);">/ delegate</span>
+        </div>
+        <p style="font-size: 14.5px; line-height: 1.65; color: rgba(237,230,226,0.62); margin: 22px 0 0; padding-top: 20px; border-top: 1px solid rgba(237,230,226,0.1);">One rate for individual delegates and school delegations alike. Applies until seats fill.</p>
+      </div>
+      <div style="padding: 30px 30px; border: 1px solid rgba(237,230,226,0.1); background: rgba(0,0,0,0.2);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: rgba(237,230,226,0.74);">INCLUDED</div>
+        <div style="display: grid; gap: 11px; margin-top: 18px;">
+          <div style="display: flex; gap: 10px; font-size: 14px; color: rgba(237,230,226,0.7);"><span style="color: #FF5B4A; font-family: 'IBM Plex Mono', monospace;">+</span>Three days of committee sessions</div>
+          <div style="display: flex; gap: 10px; font-size: 14px; color: rgba(237,230,226,0.7);"><span style="color: #FF5B4A; font-family: 'IBM Plex Mono', monospace;">+</span>Delegate kit, placard and study guide</div>
+          <div style="display: flex; gap: 10px; font-size: 14px; color: rgba(237,230,226,0.7);"><span style="color: #FF5B4A; font-family: 'IBM Plex Mono', monospace;">+</span>Lunch and refreshments, all three days</div>
+          <div style="display: flex; gap: 10px; font-size: 14px; color: rgba(237,230,226,0.7);"><span style="color: #FF5B4A; font-family: 'IBM Plex Mono', monospace;">+</span>Certificate of participation</div>
+          <div style="display: flex; gap: 10px; font-size: 14px; color: rgba(237,230,226,0.7);"><span style="color: #FF5B4A; font-family: 'IBM Plex Mono', monospace;">+</span>Socials and closing ceremony access</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 20px; padding: 26px 28px; border: 1px dashed rgba(249,166,26,0.35); background: rgba(249,166,26,0.05); display: flex; align-items: center; gap: 28px;">
+      <div style="flex: 1;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #F9A61A;">ADD-ON</div>
+        <h3 style="font-size: 20px; font-weight: 700; margin: 10px 0 6px;">Accommodation package</h3>
+        <p style="font-size: 13.5px; color: rgba(237,230,226,0.6); margin: 0;">Two nights, twin sharing, breakfast and shuttle to venue. Limited allocation for out-of-city delegations.</p>
+      </div>
+      <div style="text-align: right;"><div style="font-size: 32px; font-weight: 800;">₹2,400</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(237,230,226,0.74); letter-spacing: 0.16em;">PER DELEGATE</div></div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 40px; margin-top: 88px; align-items: start;">
+      <div style="padding: 40px 38px; border: 1px solid rgba(237,230,226,0.12); background: rgba(0,0,0,0.18);">
+        <sc-if value="{{ trackIndividual }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #FF5B4A;">FORM A</div>
+            <div style="flex: 1; height: 1px; background: linear-gradient(90deg, rgba(200,16,46,0.5), transparent);"></div>
+          </div>
+          <h2 style="font-size: 28px; font-weight: 700; margin: 14px 0 6px;">Individual delegate application</h2>
+          <p style="font-size: 14px; color: rgba(237,230,226,0.76); margin: 0 0 30px;">One delegate, one submission. Allocation is confirmed by email.</p>
+          <div style="display: grid; gap: 20px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">FULL NAME</span><input placeholder="Aarav Reddy" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)" /></label>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">EMAIL</span><input placeholder="you@school.edu" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)" /></label>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">PHONE</span><input placeholder="+91 " style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)" /></label>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">SCHOOL / INSTITUTION</span><input placeholder="Institution name" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)" /></label>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">GRADE / YEAR</span><select style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E"><option>Grade 8–10</option><option>Grade 11–12</option><option>Undergraduate</option></select></label>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">MUN EXPERIENCE</span><select style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E"><option>First conference</option><option>1–3 conferences</option><option>4+ conferences</option></select></label>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 20px;">
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">1ST PREFERENCE</span><select style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E"><option>UN Security Council</option><option>Human Rights Council</option><option>All India Political Parties Meet</option></select></label>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">2ND PREFERENCE</span><select style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E"><option>UN Security Council</option><option>Human Rights Council</option><option>All India Political Parties Meet</option></select></label>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">3RD PREFERENCE</span><select style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E"><option>UN Security Council</option><option>Human Rights Council</option><option>All India Political Parties Meet</option></select></label>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">ACCOMMODATION ADD-ON</span><select style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E"><option>Not required</option><option>Required — two nights</option></select></label>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">PORTFOLIO PREFERENCE (OPTIONAL)</span><input placeholder="Country or character" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)" /></label>
+            </div>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">ANYTHING WE SHOULD KNOW</span><textarea rows="3" placeholder="Accessibility needs, dietary requirements…" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none; resize: vertical;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)"></textarea></label>
+          <div style="display: flex; align-items: center; gap: 18px; margin-top: 6px;">
+            <div style="padding: 17px 34px; background: linear-gradient(135deg, #E8203A, #C8102E 55%, #7E0A1C); color: #FFF2EC; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px));" style-hover="box-shadow: 0 0 32px rgba(200,16,46,0.6); transform: translateY(-2px)">Submit application</div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(237,230,226,0.72);">NO PAYMENT AT THIS STAGE</span>
+          </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ trackSchool }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #FF5B4A;">FORM B</div>
+            <div style="flex: 1; height: 1px; background: linear-gradient(90deg, rgba(200,16,46,0.5), transparent);"></div>
+          </div>
+          <h2 style="font-size: 28px; font-weight: 700; margin: 14px 0 6px;">School delegation registration</h2>
+          <p style="font-size: 14px; color: rgba(237,230,226,0.76); margin: 0 0 30px;">Submitted by a faculty coordinator. One invoice, one point of contact, priority allocation.</p>
+          <div style="display: grid; gap: 20px;">
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">INSTITUTION NAME</span><input placeholder="School or college name" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)" /></label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">FACULTY COORDINATOR</span><input placeholder="Full name" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)" /></label>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">DESIGNATION</span><input placeholder="e.g. MUN Faculty Advisor" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)" /></label>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">OFFICIAL EMAIL</span><input placeholder="coordinator@school.edu" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)" /></label>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">PHONE</span><input placeholder="+91 " style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)" /></label>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 20px;">
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">DELEGATION SIZE</span><select style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E"><option>5–10 delegates</option><option>11–20 delegates</option><option>21–30 delegates</option><option>30+ delegates</option></select></label>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">ACCOMPANYING FACULTY</span><select style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E"><option>1</option><option>2</option><option>3 or more</option></select></label>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">ACCOMMODATION ADD-ON</span><select style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E"><option>Not required</option><option>Required — for part of delegation</option><option>Required — full delegation</option></select></label>
+            </div>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">COMMITTEE SPREAD REQUESTED</span><textarea rows="2" placeholder="e.g. 6 in UNSC, 8 in UNHRC, 4 in AIPPM" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none; resize: vertical;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)"></textarea></label>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">INVOICING &amp; OTHER NOTES</span><textarea rows="3" placeholder="GST details, purchase order, dietary or accessibility needs…" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none; resize: vertical;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)"></textarea></label>
+          <div style="display: flex; align-items: center; gap: 18px; margin-top: 6px;">
+            <div style="padding: 17px 34px; background: linear-gradient(135deg, #E8203A, #C8102E 55%, #7E0A1C); color: #FFF2EC; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px));" style-hover="box-shadow: 0 0 32px rgba(200,16,46,0.6); transform: translateY(-2px)">Submit delegation</div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(237,230,226,0.72);">INVOICE ISSUED AFTER REVIEW</span>
+          </div>
+          </div>
+        </div>
+        </sc-if>
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.24em; color: #FF6A58;">RESPONSIVE BEHAVIOUR — REGISTRATION</div>
+        <div style="display: flex; gap: 24px; margin-top: 22px; align-items: flex-start;">
+          <div style="width: 218px; flex: none; border: 1px solid rgba(249,166,26,0.28); padding: 14px 12px; background: rgba(0,0,0,0.26);">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(237,230,226,0.72);">375 × 812</div>
+            <div style="margin-top: 12px; padding: 12px; border: 1px solid rgba(249,166,26,0.4); background: rgba(249,166,26,0.07);"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 0.16em; color: #F9A61A;">STEP 01 / 03</div><div style="font-size: 12px; font-weight: 600; margin-top: 5px;">Choose track</div></div>
+            <div style="margin-top: 10px; padding: 14px 12px; border: 1px solid rgba(249,166,26,0.45); background: linear-gradient(150deg, rgba(0,0,0,0.4), transparent);"><div style="font-size: 13px; font-weight: 700;">Individual delegate</div><div style="font-size: 10px; color: rgba(237,230,226,0.76); margin-top: 4px;">Apply on your own</div></div>
+            <div style="margin-top: 8px; padding: 14px 12px; border: 1px solid rgba(237,230,226,0.14);"><div style="font-size: 13px; font-weight: 700;">School delegation</div><div style="font-size: 10px; color: rgba(237,230,226,0.76); margin-top: 4px;">5+ delegates, one invoice</div></div>
+            <div style="margin-top: 8px; padding: 12px; border: 1px solid rgba(237,230,226,0.12);"><div style="font-size: 20px; font-weight: 800;">₹1,500</div><div style="font-size: 9px; font-family: 'IBM Plex Mono', monospace; color: rgba(237,230,226,0.74); letter-spacing: 0.14em;">REGULAR</div></div>
+            <div style="margin-top: 12px; padding: 12px; text-align: center; background: linear-gradient(135deg, #E8203A, #C8102E); color: #FFF2EC; font-size: 11px; font-weight: 700; letter-spacing: 0.12em;">CONTINUE</div>
+          </div>
+          <ul style="margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.75; color: rgba(237,230,226,0.62);">
+            <li>Track A and Track B stack to a single column; picking a track scrolls its form into place with the selected card pinned above it.</li>
+            <li>Step rail collapses to a "STEP 01 / 03" counter with a 2px gold progress bar.</li>
+            <li>Form fields go full-width, 52px tall — comfortably above the 44px touch minimum.</li>
+            <li>Submit becomes a sticky bottom bar with the running fee total on the left.</li>
+            <li>Angular corner cuts reduce from 18px to 10px so they read at small sizes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ===================== SCHEDULE ===================== -->
+  <sc-if value="{{ isSchedule }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 40px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3em; color: #FF6A58;">/ SCHEDULE</div>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-top: 20px;">
+      <h1 style="font-size: 76px; line-height: 0.94; font-weight: 800; letter-spacing: -0.035em; margin: 0;">Three days</h1>
+      <div style="padding: 12px 18px; border: 1px solid rgba(249,166,26,0.35); background: rgba(249,166,26,0.07); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: #F9A61A;">CALENDAR DATES — TO BE ANNOUNCED</div>
+    </div>
+    <p style="max-width: 620px; font-size: 17px; line-height: 1.65; color: rgba(237,230,226,0.68); margin: 26px 0 0;">Three days of committee sessions, with an opening and closing ceremony. Session timings and calendar dates publish together in the conference announcement.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 56px;">
+      <sc-for list="{{ days }}" as="d" hint-placeholder-count="3">
+        <div style="border: 1px solid rgba(237,230,226,0.1); background: rgba(0,0,0,0.2); min-height: 320px; display: flex; flex-direction: column;">
+          <div style="padding: 26px 28px; border-bottom: 1px solid rgba(237,230,226,0.1); background: linear-gradient(140deg, rgba(0,0,0,0.34), transparent);">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: #FF5B4A;">{{ d.label }}</div>
+            <h2 style="font-size: 26px; font-weight: 700; margin: 12px 0 4px;">{{ d.title }}</h2>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(237,230,226,0.74);">DATE TO BE ANNOUNCED</div>
+          </div>
+          <div style="flex: 1; display: grid; place-items: center; padding: 40px 28px;">
+            <div style="text-align: center;">
+              <div style="width: 46px; height: 46px; margin: 0 auto; border: 1px solid rgba(249,166,26,0.35); border-radius: 50%; display: grid; place-items: center;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #F9A61A; animation: lm-pulse 2.6s ease-in-out infinite;"></div>
+              </div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: rgba(237,230,226,0.74); margin-top: 18px;">SESSION PLAN PENDING</div>
+              <p style="font-size: 13.5px; line-height: 1.6; color: rgba(237,230,226,0.74); margin: 12px 0 0; max-width: 230px;">{{ d.note }}</p>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="margin-top: 20px; padding: 28px 30px; border: 1px solid rgba(237,230,226,0.1); background: rgba(0,0,0,0.18); display: flex; align-items: center; gap: 32px;">
+      <div style="flex: 1;">
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 6px;">The full run of show publishes with the conference announcement</h3>
+        <p style="font-size: 14px; line-height: 1.6; color: rgba(237,230,226,0.6); margin: 0;">Registered delegates receive the timed schedule, committee room allocations and dais briefings by email before day one.</p>
+      </div>
+      <div onClick="{{ goRegister }}" style="padding: 15px 28px; border: 1px solid rgba(200,16,46,0.6); color: #FF5B4A; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; white-space: nowrap;" style-hover="background: rgba(200,16,46,0.12)">Register interest</div>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ===================== SPONSORS ===================== -->
+  <sc-if value="{{ isSponsors }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 40px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3em; color: #FF6A58;">/ PARTNERS</div>
+    <h1 style="font-size: 76px; line-height: 0.94; font-weight: 800; letter-spacing: -0.035em; margin: 20px 0 0; max-width: 840px;">Partner with Edition I</h1>
+    <p style="max-width: 620px; font-size: 17px; line-height: 1.65; color: rgba(237,230,226,0.68); margin: 26px 0 0;">Three hundred delegates, forty organisers and their families across Guntur's schools — with year-round visibility through the Lumen Youth Initiative.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 56px;">
+      <sc-for list="{{ sponsorTiers }}" as="t" hint-placeholder-count="4">
+        <div style="display: flex; flex-direction: column; padding: 30px 26px 26px; border: 1px solid rgba(237,230,226,0.1); background: rgba(0,0,0,0.2);" style-hover="border-color: rgba(249,166,26,0.45); box-shadow: 0 18px 40px rgba(0,0,0,0.4); transform: translateY(-3px)">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #F9A61A;">{{ t.tag }}</div>
+          <h3 style="font-size: 23px; font-weight: 700; margin: 14px 0 6px;">{{ t.name }}</h3>
+          <div style="font-size: 26px; font-weight: 800; letter-spacing: -0.02em; margin: 10px 0 20px;">{{ t.price }}</div>
+          <div style="display: grid; gap: 10px; padding-top: 18px; border-top: 1px solid rgba(237,230,226,0.09);">
+            <sc-for list="{{ t.perks }}" as="p" hint-placeholder-count="4">
+              <div style="display: flex; gap: 10px; font-size: 13px; line-height: 1.5; color: rgba(237,230,226,0.65);"><span style="color: #F9A61A; font-family: 'IBM Plex Mono', monospace;">+</span>{{ p }}</div>
+            </sc-for>
+          </div>
+          <div style="margin-top: auto; padding-top: 22px;"><div onClick="{{ goContact }}" style="padding: 12px 18px; text-align: center; border: 1px solid rgba(249,166,26,0.4); color: #F9A61A; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;" style-hover="background: rgba(249,166,26,0.1)">Enquire</div></div>
+        </div>
+      </sc-for>
+    </div>
+
+    <h2 style="font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin: 88px 0 8px;">In conversation with</h2>
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: rgba(237,230,226,0.74); margin: 0 0 30px;">PARTNER LOGOS PUBLISH ON CONFIRMATION</p>
+    <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: rgba(237,230,226,0.09); border: 1px solid rgba(237,230,226,0.09);">
+      <sc-for list="{{ logoSlots }}" as="l" hint-placeholder-count="12">
+        <div style="background: rgba(0,0,0,0.3); aspect-ratio: 16 / 9; display: grid; place-items: center;" style-hover="background: rgba(249,166,26,0.06)">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(237,230,226,0.74);">{{ l }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ===================== PRESS / GALLERY ===================== -->
+  <sc-if value="{{ isPress }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 40px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3em; color: #FF6A58;">/ PRESS &amp; GALLERY</div>
+    <h1 style="font-size: 76px; line-height: 0.94; font-weight: 800; letter-spacing: -0.035em; margin: 20px 0 0;">Press room</h1>
+    <p style="max-width: 620px; font-size: 17px; line-height: 1.65; color: rgba(237,230,226,0.68); margin: 26px 0 0;">Edition I is our first — the gallery fills as it happens. Accreditation, interview requests and brand assets are handled below.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 190px; gap: 14px; margin-top: 52px;">
+      <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="8">
+        <div style="--ret: rgba(249,166,26,0.16); position: relative; grid-column: {{ g.span }}; border: 1px solid rgba(237,230,226,0.1); background-image: repeating-linear-gradient(135deg, rgba(249,166,26,0.06) 0 2px, transparent 2px 11px); display: grid; place-items: center; overflow: hidden; cursor: pointer;" style-hover="--ret: #FF5B4A; border-color: rgba(200,16,46,0.55)">
+          <div style="position: absolute; top: 9px; left: 9px; width: 13px; height: 13px; border-top: 1px solid var(--ret); border-left: 1px solid var(--ret);"></div>
+          <div style="position: absolute; bottom: 9px; right: 9px; width: 13px; height: 13px; border-bottom: 1px solid var(--ret); border-right: 1px solid var(--ret);"></div>
+          <div style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(237,230,226,0.72); padding: 16px;">{{ g.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 400px; gap: 40px; margin-top: 72px; align-items: start;">
+      <div style="padding: 34px 32px; border: 1px solid rgba(237,230,226,0.1); background: rgba(0,0,0,0.18);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: rgba(237,230,226,0.74);">PRESS DESK</div>
+        <h2 style="font-size: 26px; font-weight: 700; margin: 14px 0 10px;">Accreditation &amp; enquiries</h2>
+        <p style="font-size: 14.5px; line-height: 1.7; color: rgba(237,230,226,0.62); margin: 0 0 22px; max-width: 560px;">Student publications and local media can request accreditation for the conference floor. Interviews with the Secretary-General and dais members are arranged through the Press &amp; Media department.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(237,230,226,0.1); border: 1px solid rgba(237,230,226,0.1);">
+          <div style="background: rgba(0,0,0,0.3); padding: 20px 22px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">ACCREDITATION</div><div style="font-size: 15px; font-weight: 600; margin-top: 8px;">press@lumenmun.org</div></div>
+          <div style="background: rgba(0,0,0,0.3); padding: 20px 22px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">RESPONSE TIME</div><div style="font-size: 15px; font-weight: 600; margin-top: 8px;">Within 48 hours</div></div>
+        </div>
+      </div>
+      <div style="padding: 32px 30px; border: 1px solid rgba(200,16,46,0.4); background: linear-gradient(150deg, rgba(0,0,0,0.4), rgba(255,255,255,0.03));">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #FF5B4A;">MEDIA KIT</div>
+        <h3 style="font-size: 22px; font-weight: 700; margin: 14px 0 10px;">Logos, palette, fact sheet</h3>
+        <p style="font-size: 13.5px; line-height: 1.6; color: rgba(237,230,226,0.6); margin: 0 0 22px;">Brand assets and an editable one-pager for outlets covering the conference.</p>
+        <div style="padding: 14px 20px; text-align: center; background: linear-gradient(135deg, #E8203A, #C8102E 55%, #7E0A1C); color: #FFF2EC; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;" style-hover="box-shadow: 0 0 26px rgba(200,16,46,0.55)">Request media kit</div>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ===================== FAQ ===================== -->
+  <sc-if value="{{ isFaq }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 40px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3em; color: #FF6A58;">/ FAQ</div>
+    <h1 style="font-size: 76px; line-height: 0.94; font-weight: 800; letter-spacing: -0.035em; margin: 20px 0 0;">Questions</h1>
+    <div style="display: grid; grid-template-columns: 1fr 300px; gap: 60px; margin-top: 56px; align-items: start;">
+      <div style="border-top: 1px solid rgba(237,230,226,0.12);">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="8">
+          <div style="border-bottom: 1px solid rgba(237,230,226,0.09);">
+            <div onClick="{{ f.toggle }}" style="display: flex; align-items: center; gap: 22px; padding: 26px 8px; cursor: pointer;" style-hover="background: rgba(249,166,26,0.04)">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(237,230,226,0.72);">{{ f.num }}</div>
+              <div style="font-size: 19px; font-weight: 600; flex: 1;">{{ f.q }}</div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; color: #F9A61A;">{{ f.sign }}</div>
+            </div>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+              <div style="padding: 0 8px 30px 55px; animation: lm-rise 220ms ease both;">
+                <p style="font-size: 15.5px; line-height: 1.7; color: rgba(237,230,226,0.66); margin: 0; max-width: 700px;">{{ f.a }}</p>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <div style="padding: 30px 28px; border: 1px solid rgba(237,230,226,0.12); background: rgba(0,0,0,0.18);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #F9A61A;">STILL STUCK</div>
+        <p style="font-size: 14px; line-height: 1.65; color: rgba(237,230,226,0.62); margin: 14px 0 20px;">Delegate Affairs answers within 24 hours on weekdays.</p>
+        <div onClick="{{ goContact }}" style="padding: 13px 18px; text-align: center; border: 1px solid rgba(249,166,26,0.4); color: #F9A61A; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;" style-hover="background: rgba(249,166,26,0.1)">Contact us</div>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ===================== CONTACT ===================== -->
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 40px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3em; color: #FF6A58;">/ CONTACT</div>
+    <h1 style="font-size: 76px; line-height: 0.94; font-weight: 800; letter-spacing: -0.035em; margin: 20px 0 0;">Get in touch</h1>
+    <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; margin-top: 56px; align-items: start;">
+      <div style="padding: 40px 38px; border: 1px solid rgba(237,230,226,0.12); background: rgba(0,0,0,0.18);">
+        <div style="display: grid; gap: 20px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">NAME</span><input placeholder="Your name" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)" /></label>
+            <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">EMAIL</span><input placeholder="you@email.com" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)" /></label>
+          </div>
+          <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">I AM WRITING ABOUT</span><select style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none;" style-focus="border-color: #C8102E"><option>Delegate registration</option><option>School delegation</option><option>Sponsorship &amp; partnerships</option><option>Press &amp; media</option><option>Something else</option></select></label>
+          <label style="display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">MESSAGE</span><textarea rows="5" placeholder="How can we help?" style="width: 100%; margin-top: 9px; padding: 14px; background: rgba(0,0,0,0.34); border: 1px solid rgba(237,230,226,0.16); color: #EDE6E2; font-size: 14px; outline: none; resize: vertical;" style-focus="border-color: #C8102E; box-shadow: 0 0 0 3px rgba(200,16,46,0.18)"></textarea></label>
+          <div style="padding: 17px 34px; width: fit-content; background: linear-gradient(135deg, #E8203A, #C8102E 55%, #7E0A1C); color: #FFF2EC; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px));" style-hover="box-shadow: 0 0 30px rgba(200,16,46,0.6); transform: translateY(-2px)">Send message</div>
+        </div>
+      </div>
+      <div style="display: grid; gap: 20px;">
+        <div style="padding: 28px 26px; border: 1px solid rgba(237,230,226,0.12); background: rgba(0,0,0,0.18);">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #F9A61A;">DIRECT</div>
+          <div style="display: grid; gap: 16px; margin-top: 18px;">
+            <div><div style="font-size: 12px; color: rgba(237,230,226,0.74);">Delegate Affairs</div><div style="font-size: 16px; font-weight: 600;">delegates@lumenmun.org</div></div>
+            <div><div style="font-size: 12px; color: rgba(237,230,226,0.74);">Sponsorship</div><div style="font-size: 16px; font-weight: 600;">partners@lumenmun.org</div></div>
+            <div><div style="font-size: 12px; color: rgba(237,230,226,0.74);">Press</div><div style="font-size: 16px; font-weight: 600;">press@lumenmun.org</div></div>
+          </div>
+        </div>
+        <div style="padding: 28px 26px; border: 1px solid rgba(237,230,226,0.12); background: rgba(0,0,0,0.18);">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: #F9A61A;">SOCIALS</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px;">
+            <div style="padding: 11px 18px; border: 1px solid rgba(237,230,226,0.16); font-size: 12.5px; letter-spacing: 0.08em; cursor: pointer;" style-hover="border-color: #F9A61A; color: #F9A61A">Instagram</div>
+            <div style="padding: 11px 18px; border: 1px solid rgba(237,230,226,0.16); font-size: 12.5px; letter-spacing: 0.08em; cursor: pointer;" style-hover="border-color: #F9A61A; color: #F9A61A">LinkedIn</div>
+            <div style="padding: 11px 18px; border: 1px solid rgba(237,230,226,0.16); font-size: 12.5px; letter-spacing: 0.08em; cursor: pointer;" style-hover="border-color: #F9A61A; color: #F9A61A">X / Twitter</div>
+            <div style="padding: 11px 18px; border: 1px solid rgba(237,230,226,0.16); font-size: 12.5px; letter-spacing: 0.08em; cursor: pointer;" style-hover="border-color: #F9A61A; color: #F9A61A">WhatsApp</div>
+          </div>
+        </div>
+        <div style="position: relative; height: 200px; border: 1px solid rgba(249,166,26,0.22); background-image: repeating-linear-gradient(135deg, rgba(249,166,26,0.07) 0 2px, transparent 2px 11px); display: grid; place-items: center;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(237,230,226,0.74); text-align: center;">[ MAP ]<br />GUNTUR, ANDHRA PRADESH</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ===================== DESIGN SYSTEM ===================== -->
+  <sc-if value="{{ isSystem }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1280px; margin: 0 auto; padding: 80px 40px 40px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.3em; color: #FF6A58;">/ FOUNDATION</div>
+    <h1 style="font-size: 76px; line-height: 0.94; font-weight: 800; letter-spacing: -0.035em; margin: 20px 0 0;">Design system</h1>
+    <p style="max-width: 640px; font-size: 17px; line-height: 1.65; color: rgba(237,230,226,0.68); margin: 26px 0 0;">The page ground is lifted straight from the crest field, so the mark sits on the site without an edge. Panels are black at 18–22% over that maroon. HUD geometry is expressed as 1px lines, 14–20px corner cuts and monospace readouts — never as illustration.</p>
+
+    <h2 style="font-size: 28px; font-weight: 700; margin: 72px 0 22px;">Colour tokens</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(237,230,226,0.1); border: 1px solid rgba(237,230,226,0.1);">
+      <sc-for list="{{ tokens }}" as="t" hint-placeholder-count="8">
+        <div style="background: rgba(0,0,0,0.3); padding: 0;">
+          <div style="height: 96px; background: {{ t.hex }};"></div>
+          <div style="padding: 16px 18px 20px;">
+            <div style="font-size: 14px; font-weight: 600;">{{ t.name }}</div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(237,230,226,0.74); margin-top: 6px;">{{ t.hex }}</div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(237,230,226,0.68); margin-top: 4px;">{{ t.use }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; margin-top: 80px; align-items: start;">
+      <div>
+        <h2 style="font-size: 28px; font-weight: 700; margin: 0 0 22px;">Type scale</h2>
+        <div style="display: grid; gap: 18px;">
+          <div style="display: grid; grid-template-columns: 130px 1fr; gap: 20px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid rgba(237,230,226,0.08);"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(237,230,226,0.72);">DISPLAY / 116 / 800</div><div style="font-size: 52px; font-weight: 800; letter-spacing: -0.035em; line-height: 1;">Lumen MUN</div></div>
+          <div style="display: grid; grid-template-columns: 130px 1fr; gap: 20px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid rgba(237,230,226,0.08);"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(237,230,226,0.72);">H1 / 76 / 800</div><div style="font-size: 40px; font-weight: 800; letter-spacing: -0.03em;">Page heading</div></div>
+          <div style="display: grid; grid-template-columns: 130px 1fr; gap: 20px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid rgba(237,230,226,0.08);"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(237,230,226,0.72);">H2 / 42 / 700</div><div style="font-size: 32px; font-weight: 700; letter-spacing: -0.02em;">Section heading</div></div>
+          <div style="display: grid; grid-template-columns: 130px 1fr; gap: 20px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid rgba(237,230,226,0.08);"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(237,230,226,0.72);">H3 / 24 / 700</div><div style="font-size: 22px; font-weight: 700;">Card title</div></div>
+          <div style="display: grid; grid-template-columns: 130px 1fr; gap: 20px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid rgba(237,230,226,0.08);"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(237,230,226,0.72);">BODY / 16 / 400</div><div style="font-size: 16px; line-height: 1.7; color: rgba(237,230,226,0.72);">Body copy sits at 16–18px with 1.65–1.72 line height and never exceeds 640px of measure.</div></div>
+          <div style="display: grid; grid-template-columns: 130px 1fr; gap: 20px; align-items: baseline;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: rgba(237,230,226,0.72);">READOUT / 11 / MONO</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.24em; color: #F9A61A;">STATUS · CLASSIFIED · 0.24EM TRACKING</div></div>
+        </div>
+      </div>
+      <div>
+        <h2 style="font-size: 28px; font-weight: 700; margin: 0 0 22px;">Spacing</h2>
+        <div style="display: grid; gap: 12px;">
+          <sc-for list="{{ spacing }}" as="s" hint-placeholder-count="6">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(237,230,226,0.74); width: 60px;">{{ s.label }}</div>
+              <div style="height: 12px; width: {{ s.w }}; background: linear-gradient(90deg, #C8102E, rgba(200,16,46,0.25));"></div>
+            </div>
+          </sc-for>
+        </div>
+        <p style="font-size: 13.5px; line-height: 1.65; color: rgba(237,230,226,0.76); margin: 24px 0 0;">4px base unit. Section rhythm 72/88/96. Grid gutter 20px, page margin 40px, max content width 1280px.</p>
+      </div>
+    </div>
+
+    <h2 style="font-size: 28px; font-weight: 700; margin: 80px 0 22px;">Component states</h2>
+    <div style="display: grid; gap: 20px;">
+      <div style="padding: 32px 30px; border: 1px solid rgba(237,230,226,0.1); background: rgba(0,0,0,0.18);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: rgba(237,230,226,0.74);">BUTTON — PRIMARY</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: center; margin-top: 20px;">
+          <div><div style="padding: 16px 30px; background: linear-gradient(135deg, #E8203A, #C8102E 55%, #7E0A1C); color: #FFF2EC; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px));">Register</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(237,230,226,0.72); margin-top: 10px; text-align: center;">DEFAULT</div></div>
+          <div><div style="padding: 16px 30px; background: linear-gradient(135deg, #FF3A50, #E8203A 55%, #C8102E); color: #FFF2EC; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; box-shadow: 0 0 30px rgba(200,16,46,0.6); transform: translateY(-2px); clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px));">Register</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #F9A61A; margin-top: 10px; text-align: center;">HOVER</div></div>
+          <div><div style="padding: 16px 30px; background: linear-gradient(135deg, #A80D24, #7E0A1C); color: #FFF2EC; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; transform: translateY(1px); clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px));">Register</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(237,230,226,0.72); margin-top: 10px; text-align: center;">ACTIVE</div></div>
+          <div><div style="padding: 16px 30px; background: rgba(237,230,226,0.08); color: rgba(237,230,226,0.32); font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px));">Register</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(237,230,226,0.72); margin-top: 10px; text-align: center;">DISABLED</div></div>
+        </div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: rgba(237,230,226,0.74); margin-top: 34px;">BUTTON — SECONDARY (GHOST)</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: center; margin-top: 20px;">
+          <div><div style="padding: 16px 30px; border: 1px solid rgba(249,166,26,0.4); color: #F9A61A; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Committees</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(237,230,226,0.72); margin-top: 10px; text-align: center;">DEFAULT</div></div>
+          <div><div style="padding: 16px 30px; border: 1px solid #F9A61A; background: rgba(249,166,26,0.1); color: #FFC257; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Committees</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #F9A61A; margin-top: 10px; text-align: center;">HOVER</div></div>
+          <div><div style="padding: 16px 30px; border: 1px solid #F9A61A; background: rgba(249,166,26,0.2); color: #FFFFFF; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Committees</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(237,230,226,0.72); margin-top: 10px; text-align: center;">ACTIVE</div></div>
+          <div><div style="padding: 16px 30px; border: 1px solid rgba(237,230,226,0.12); color: rgba(237,230,226,0.28); font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Committees</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(237,230,226,0.72); margin-top: 10px; text-align: center;">DISABLED</div></div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div style="padding: 26px 24px; border: 1px solid rgba(237,230,226,0.1); background: rgba(0,0,0,0.2);">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.72);">CARD — DEFAULT</div>
+          <h3 style="font-size: 19px; font-weight: 700; margin: 14px 0 8px;">Committee card</h3>
+          <p style="font-size: 13px; line-height: 1.6; color: rgba(237,230,226,0.76); margin: 0;">1px border at 10% white, surface at 2.2%, corner cut 16px.</p>
+        </div>
+        <div style="--ret: #F9A61A; position: relative; padding: 26px 24px; border: 1px solid rgba(200,16,46,0.6); background: rgba(249,166,26,0.05); transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0,0,0,0.45);">
+          <div style="position: absolute; top: 9px; left: 9px; width: 13px; height: 13px; border-top: 1px solid var(--ret); border-left: 1px solid var(--ret);"></div>
+          <div style="position: absolute; bottom: 9px; right: 9px; width: 13px; height: 13px; border-bottom: 1px solid var(--ret); border-right: 1px solid var(--ret);"></div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: #F9A61A;">CARD — HOVER</div>
+          <h3 style="font-size: 19px; font-weight: 700; margin: 14px 0 8px;">Committee card</h3>
+          <p style="font-size: 13px; line-height: 1.6; color: rgba(237,230,226,0.62); margin: 0;">Reticle brackets ignite, border to 50% gold, lift 3px, no scale.</p>
+        </div>
+        <div style="padding: 26px 24px; border: 1px solid rgba(237,230,226,0.07); background: rgba(0,0,0,0.12); opacity: 0.55;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: rgba(237,230,226,0.68);">CARD — DISABLED</div>
+          <h3 style="font-size: 19px; font-weight: 700; margin: 14px 0 8px; color: rgba(237,230,226,0.74);">Closed committee</h3>
+          <p style="font-size: 13px; line-height: 1.6; color: rgba(237,230,226,0.68); margin: 0;">Interaction removed, brackets suppressed, copy at 35%.</p>
+        </div>
+      </div>
+
+      <div style="padding: 30px; border: 1px solid rgba(237,230,226,0.1); background: rgba(0,0,0,0.18);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: rgba(237,230,226,0.74);">NAV ITEM STATES</div>
+        <div style="display: flex; gap: 34px; align-items: center; margin-top: 20px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;">
+          <div style="color: rgba(237,230,226,0.72);">Default</div>
+          <div style="color: #FFFFFF;">Hover</div>
+          <div style="position: relative; color: #FFFFFF; padding-bottom: 8px;">Active<div style="position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #E8203A; box-shadow: 0 0 12px rgba(232,32,58,0.9);"></div></div>
+          <div style="color: rgba(237,230,226,0.74);">Disabled</div>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 28px; font-weight: 700; margin: 80px 0 8px;">Motion</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 22px;">
+      <div style="padding: 24px; border: 1px solid rgba(237,230,226,0.1);"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: #F9A61A;">PAGE TRANSITION</div><p style="font-size: 13.5px; line-height: 1.6; color: rgba(237,230,226,0.6); margin: 12px 0 0;">620ms HUD sweep, cubic-bezier(.65,0,.35,1). Content swaps at 260ms behind the band.</p></div>
+      <div style="padding: 24px; border: 1px solid rgba(237,230,226,0.1);"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: #F9A61A;">HOVER</div><p style="font-size: 13.5px; line-height: 1.6; color: rgba(237,230,226,0.6); margin: 12px 0 0;">3px lift, red repulsor glow at 55% alpha, reticle brackets ignite. 180ms ease-out. Never scale, never bounce.</p></div>
+      <div style="padding: 24px; border: 1px solid rgba(237,230,226,0.1);"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: #F9A61A;">READOUTS</div><p style="font-size: 13.5px; line-height: 1.6; color: rgba(237,230,226,0.6); margin: 12px 0 0;">Counters tick once on first paint over 1.1s. Status dots pulse at 2.4s. Nothing loops faster than 2s.</p></div>
+    </div>
+
+    <h2 style="font-size: 28px; font-weight: 700; margin: 80px 0 22px;">Homepage — mobile</h2>
+    <div style="display: flex; gap: 40px; align-items: flex-start;">
+      <div style="width: 246px; flex: none; border: 1px solid rgba(249,166,26,0.28); background: rgba(0,0,0,0.3); padding: 14px;">
+        <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(237,230,226,0.72); letter-spacing: 0.16em;"><span>LUMEN MUN</span><span>☰</span></div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 0.2em; color: #F9A61A; margin-top: 22px;">EDITION I · GUNTUR</div>
+        <div style="font-size: 34px; font-weight: 800; line-height: 0.9; letter-spacing: -0.03em; margin-top: 10px;">Lumen<br /><span style="color: #F9A61A;">MUN</span></div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 0.24em; color: rgba(237,230,226,0.74); margin-top: 12px;">LUMINATE . DEBATE . INSPIRE</div>
+        <div style="margin-top: 16px; padding: 12px; text-align: center; background: linear-gradient(135deg, #E8203A, #C8102E); color: #FFF2EC; font-size: 11px; font-weight: 700; letter-spacing: 0.1em;">REGISTER</div>
+        <div style="margin-top: 8px; padding: 12px; text-align: center; border: 1px solid rgba(249,166,26,0.4); color: #F9A61A; font-size: 11px; font-weight: 600; letter-spacing: 0.1em;">COMMITTEES</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 16px; background: rgba(249,166,26,0.18); border: 1px solid rgba(249,166,26,0.18);">
+          <div style="background: rgba(0,0,0,0.3); padding: 12px 10px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 7px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">DATES</div><div style="font-size: 13px; font-weight: 700; color: #F9A61A; margin-top: 5px;">TBA</div></div>
+          <div style="background: rgba(0,0,0,0.3); padding: 12px 10px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 7px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">VENUE</div><div style="font-size: 13px; font-weight: 700; margin-top: 5px;">Guntur</div></div>
+          <div style="background: rgba(0,0,0,0.3); padding: 12px 10px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 7px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">DELEGATES</div><div style="font-size: 13px; font-weight: 700; margin-top: 5px;">300</div></div>
+          <div style="background: rgba(0,0,0,0.3); padding: 12px 10px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 7px; letter-spacing: 0.2em; color: rgba(237,230,226,0.74);">COMMITTEES</div><div style="font-size: 13px; font-weight: 700; margin-top: 5px;">3</div></div>
+        </div>
+      </div>
+      <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.8; color: rgba(237,230,226,0.65); max-width: 640px;">
+        <li>Display type drops 116 → 40px; the crest sits above the wordmark at 64px, hero reticle art is dropped entirely rather than shrunk.</li>
+        <li>The four-up readout band becomes 2×2 with the same 1px gold hairlines — it is the page's mobile anchor, so it stays above the fold.</li>
+        <li>Grouped dropdown nav becomes a full-screen HUD panel: same sweep animation, groups as labelled sections, Register pinned at the bottom.</li>
+        <li>Page margin 40 → 20px, section rhythm 88 → 56px. Three-up card grids become single column; committee previews scroll horizontally with snap.</li>
+        <li>Hover glows are replaced by press states (border to 100% gold, no lift) since there is no hover on touch.</li>
+      </ul>
+    </div>
+  </main>
+  </sc-if>
+
+  <footer style="margin-top: 96px; border-top: 1px solid rgba(249,166,26,0.16); background: rgba(0,0,0,0.26);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 56px 40px 40px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;">
+      <div>
+        <div style="font-size: 17px; font-weight: 800; letter-spacing: 0.16em;">LUMEN MUN</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.26em; color: #F9A61A; margin-top: 10px;">LUMINATE . DEBATE . INSPIRE</div>
+        <p style="font-size: 13px; line-height: 1.65; color: rgba(237,230,226,0.74); margin: 18px 0 0; max-width: 300px;">Edition I · Guntur, Andhra Pradesh. An initiative of the Lumen Youth Initiative.</p>
+      </div>
+      <div style="display: grid; gap: 10px; align-content: start; font-size: 13.5px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: rgba(237,230,226,0.72); margin-bottom: 6px;">CONFERENCE</div>
+        <div onClick="{{ goAbout }}" style="color: rgba(237,230,226,0.7); cursor: pointer;" style-hover="color: #F9A61A">About</div>
+        <div onClick="{{ goCommittees }}" style="color: rgba(237,230,226,0.7); cursor: pointer;" style-hover="color: #F9A61A">Committees</div>
+        <div onClick="{{ goSchedule }}" style="color: rgba(237,230,226,0.7); cursor: pointer;" style-hover="color: #F9A61A">Schedule</div>
+      </div>
+      <div style="display: grid; gap: 10px; align-content: start; font-size: 13.5px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: rgba(237,230,226,0.72); margin-bottom: 6px;">PARTICIPATE</div>
+        <div onClick="{{ goRegister }}" style="color: rgba(237,230,226,0.7); cursor: pointer;" style-hover="color: #F9A61A">Registration</div>
+        <div onClick="{{ goFaq }}" style="color: rgba(237,230,226,0.7); cursor: pointer;" style-hover="color: #F9A61A">FAQ</div>
+        <div onClick="{{ goSponsors }}" style="color: rgba(237,230,226,0.7); cursor: pointer;" style-hover="color: #F9A61A">Sponsors</div>
+      </div>
+      <div style="display: grid; gap: 10px; align-content: start; font-size: 13.5px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; color: rgba(237,230,226,0.72); margin-bottom: 6px;">MORE</div>
+        <div onClick="{{ goTeam }}" style="color: rgba(237,230,226,0.7); cursor: pointer;" style-hover="color: #F9A61A">Secretariat</div>
+        <div onClick="{{ goPress }}" style="color: rgba(237,230,226,0.7); cursor: pointer;" style-hover="color: #F9A61A">Press &amp; Gallery</div>
+        <div onClick="{{ goContact }}" style="color: rgba(237,230,226,0.7); cursor: pointer;" style-hover="color: #F9A61A">Contact</div>
+      </div>
+    </div>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 22px 40px 40px; border-top: 1px solid rgba(237,230,226,0.07); display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: rgba(237,230,226,0.68);">
+      <span>© 2026 LUMEN MUN</span>
+      <span onClick="{{ goSystem }}" style="cursor: pointer;">DESIGN SYSTEM</span>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { page: "home", sweeping: false, menu: null, faq: 0, track: "individual", d: 0, c: 0 };
+
+  componentDidMount() {
+    const t0 = performance.now(), dur = 1100;
+    const tick = (t) => {
+      const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      this.setState({ d: Math.round(300 * e), c: Math.round(3 * e) });
+      if (k < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  go(p) {
+    if (p === this.state.page) { this.setState({ menu: null }); return; }
+    this.setState({ sweeping: true, menu: null });
+    clearTimeout(this._t1); clearTimeout(this._t2);
+    this._t1 = setTimeout(() => { this.setState({ page: p }); window.scrollTo(0, 0); }, 260);
+    this._t2 = setTimeout(() => this.setState({ sweeping: false }), 660);
+  }
+
+  renderVals() {
+    const p = this.state.page;
+    const nav = (k) => () => this.go(k);
+    const committees = [
+      { code: "GA / 1ST", name: "UN Security Council", level: "ADVANCED", blurb: "Fifteen-member crisis floor with veto powers, live updates and directive-driven debate." },
+      { code: "GA / 3RD", name: "Human Rights Council", level: "BEGINNER FRIENDLY", blurb: "Rights, protection mandates and accountability — the right first committee, run with a patient dais." },
+      { code: "AIPPM", name: "All India Political Parties Meet", level: "ADVANCED", blurb: "Indian domestic politics, party lines and coalition arithmetic. Portfolio research is decisive." }
+    ];
+    const dept = (num, name, count, brief, people) => ({ num, name, count, brief, people });
+    const tba = (n, roles) => roles.slice(0, n).map((r) => ({ name: "To be announced", role: r }));
+    const faqSrc = [
+      ["Do I need prior MUN experience?", "No. the Human Rights Council is run as a beginner-friendly committee, and every registered delegate gets a handbook plus an online training session on procedure, speech structure and resolution writing before day one."],
+      ["When are the dates and agendas released?", "Both publish together in the conference announcement. Registering interest now means you hear first — and interest registrations are processed ahead of the general queue."],
+      ["How are committees and portfolios allocated?", "You submit your committee preferences in order and a short statement of interest. The Academics department allocates on experience and preference balance; allocations are emailed within a week of registration close."],
+      ["Can my school send a delegation?", "Yes. Five or more delegates registered by a faculty coordinator counts as a school delegation: one invoice, one point of contact and priority allocation across committees."],
+      ["What is included in the fee?", "Three days of committee sessions, delegate kit, lunch and refreshments, certificates, and access to socials and the closing ceremony. Accommodation and travel are separate."],
+      ["Is accommodation available?", "A limited two-night twin-sharing package with breakfast and venue shuttle is offered as an add-on at registration, prioritised for out-of-city delegations."],
+      ["Is there a dress code?", "Western business formal for all committee sessions. Cultural formals are welcome for the closing ceremony and socials."],
+      ["What awards are given?", "Best Delegate, High Commendation and Special Mention per committee, plus a Best Delegation trophy across the conference."]
+    ];
+    return {
+      sweeping: this.state.sweeping,
+      isHome: p === "home", isAbout: p === "about", isCommittees: p === "committees",
+      isTeam: p === "team", isRegister: p === "register", isSchedule: p === "schedule",
+      isSponsors: p === "sponsors", isPress: p === "press", isFaq: p === "faq",
+      isContact: p === "contact", isSystem: p === "system",
+      inConference: ["about", "committees", "schedule"].includes(p),
+      inDelegates: ["register", "faq"].includes(p),
+      inPeople: ["team", "sponsors", "press", "system"].includes(p),
+      menuConference: this.state.menu === "conference",
+      menuDelegates: this.state.menu === "delegates",
+      menuPeople: this.state.menu === "people",
+      openConference: () => this.setState({ menu: "conference" }),
+      openDelegates: () => this.setState({ menu: "delegates" }),
+      openPeople: () => this.setState({ menu: "people" }),
+      closeMenu: () => this.setState({ menu: null }),
+      goHome: nav("home"), goAbout: nav("about"), goCommittees: nav("committees"),
+      goTeam: nav("team"), goRegister: nav("register"), goSchedule: nav("schedule"),
+      goSponsors: nav("sponsors"), goPress: nav("press"), goFaq: nav("faq"),
+      goContact: nav("contact"), goSystem: nav("system"),
+      statDelegates: this.state.d, statCommittees: this.state.c,
+      committees,
+      committeesPreview: committees.slice(0, 3),
+      trackIndividual: this.state.track === "individual",
+      trackSchool: this.state.track === "school",
+      pickIndividual: () => this.setState({ track: "individual" }),
+      pickSchool: () => this.setState({ track: "school" }),
+      team: [
+        { name: "To be announced", role: "SECRETARY-GENERAL" },
+        { name: "To be announced", role: "DIRECTOR-GENERAL" },
+        { name: "To be announced", role: "CHARGÉ D'AFFAIRES" },
+        { name: "To be announced", role: "CHIEF ADVISOR" },
+        { name: "To be announced", role: "USG · DELEGATE AFFAIRS" },
+        { name: "To be announced", role: "USG · ACADEMICS" },
+        { name: "To be announced", role: "USG · MARKETING & DESIGN" },
+        { name: "To be announced", role: "USG · LOGISTICS" },
+        { name: "To be announced", role: "USG · FINANCE" },
+        { name: "To be announced", role: "USG · SPONSORSHIP" },
+        { name: "To be announced", role: "USG · PRESS & MEDIA" },
+        { name: "To be announced", role: "USG · TECHNOLOGY" }
+      ],
+      days: [
+        { label: "DAY 01", title: "Opening & first sessions", note: "Registration, opening ceremony, keynote and the first two committee sessions." },
+        { label: "DAY 02", title: "Substantive debate", note: "Full committee sessions, crisis updates, working papers and the delegate social." },
+        { label: "DAY 03", title: "Resolutions & close", note: "Final session, voting procedure, press conference, closing ceremony and awards." }
+      ],
+      sponsorTiers: [
+        { tag: "TIER 01", name: "Presenting partner", price: "₹1,00,000", perks: ["Naming rights in all communication", "Logo on backdrop, kits and certificates", "Keynote or address slot", "Booth at venue", "Dedicated social campaign"] },
+        { tag: "TIER 02", name: "Gold partner", price: "₹50,000", perks: ["Logo on backdrop and delegate kits", "Booth at venue", "Social media features", "Mention in closing ceremony"] },
+        { tag: "TIER 03", name: "Silver partner", price: "₹25,000", perks: ["Logo on backdrop and website", "Insert in delegate kit", "Social media mention"] },
+        { tag: "TIER 04", name: "Community partner", price: "In kind", perks: ["Logo on website", "Category exclusivity where relevant", "Mention in press releases"] }
+      ],
+      logoSlots: Array.from({ length: 12 }, (_, i) => "[ PARTNER " + String(i + 1).padStart(2, "0") + " ]"),
+      gallery: [
+        { span: "span 2", label: "[ GENERAL ASSEMBLY — WIDE ]" },
+        { span: "span 1", label: "[ DELEGATE SPEAKING ]" },
+        { span: "span 1", label: "[ PLACARD RAISED ]" },
+        { span: "span 1", label: "[ DAIS ]" },
+        { span: "span 1", label: "[ UNMODERATED CAUCUS ]" },
+        { span: "span 2", label: "[ OPENING CEREMONY ]" },
+        { span: "span 1", label: "[ AWARDS ]" },
+        { span: "span 1", label: "[ PRESS CORPS AT WORK ]" },
+        { span: "span 2", label: "[ SECRETARIAT GROUP PHOTO ]" }
+      ],
+      faqs: faqSrc.map((f, i) => ({
+        num: String(i + 1).padStart(2, "0"),
+        q: f[0], a: f[1],
+        open: this.state.faq === i,
+        sign: this.state.faq === i ? "−" : "+",
+        toggle: () => this.setState({ faq: this.state.faq === i ? -1 : i })
+      })),
+      tokens: [
+        { name: "Crest maroon", hex: "#520823", use: "PAGE BASE" },
+        { name: "Panel black", hex: "#1A0009", use: "SURFACE / CARD" },
+        { name: "Field", hex: "#3A0618", use: "SECTION FIELD" },
+        { name: "Deep maroon", hex: "#2A0210", use: "GRADIENT ANCHOR" },
+        { name: "Hot-rod red", hex: "#C8102E", use: "PRIMARY ACCENT" },
+        { name: "Repulsor red", hex: "#E8203A", use: "HOVER / GRADIENT" },
+        { name: "Arc gold", hex: "#F9A61A", use: "LINES / READOUTS" },
+        { name: "Signal", hex: "#EDE6E2", use: "TEXT PRIMARY" }
+      ],
+      spacing: [
+        { label: "4 / xs", w: "16px" }, { label: "8 / sm", w: "32px" }, { label: "16 / md", w: "64px" },
+        { label: "24 / lg", w: "96px" }, { label: "40 / xl", w: "160px" }, { label: "88 / 2xl", w: "260px" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
