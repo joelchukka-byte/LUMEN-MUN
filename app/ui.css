@@ -1330,3 +1330,63 @@ body:has(.opening) #main { padding-top: 0; }
   aspect-ratio: 1;
 }
 .crest-compare__frame > * { width: 100%; height: 100%; display: block; }
+
+/* --------------------------------------------------------------------------
+   25. Founders
+   The two people who head the conference, shown large and side by side above
+   the roster. Portraits are 4:5 and cropped to match, so the pair reads as one
+   set rather than two unrelated photographs.
+   -------------------------------------------------------------------------- */
+
+.founders {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.founder { display: flex; flex-direction: column; gap: clamp(16px, 2vw, 24px); }
+
+.founder__portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-card);
+  overflow: hidden;
+  background: var(--ink-850);
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+}
+.founder__portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Same monochrome art direction as the rest of the photography, warming to
+   colour on hover. */
+.founder__portrait img {
+  filter: grayscale(1) contrast(1.04) brightness(0.96);
+  transition: filter 600ms var(--ease), transform 700ms var(--ease);
+}
+@media (hover: hover) {
+  .founder:hover .founder__portrait img {
+    filter: grayscale(0) contrast(1.02) brightness(1);
+    transform: scale(1.02);
+  }
+}
+
+.founder__name {
+  font-size: clamp(1.375rem, 2.4vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-top: 0.625rem;
+}
+.founder__bio {
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-2);
+  max-width: 46ch;
+}
+
+/* Two portraits this large stop being readable on a phone, so they stack. */
+@media (max-width: 640px) {
+  .founders { grid-template-columns: 1fr; gap: clamp(28px, 8vw, 40px); }
+}
