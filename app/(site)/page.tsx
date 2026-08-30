@@ -13,7 +13,11 @@ import { rupees } from '@/lib/format';
 import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
 import { Opening } from '@/components/site/Opening';
 
-export const revalidate = 60;
+/*
+ * Rendered per request rather than prerendered: this page reads from Postgres,
+ * and the build container has no route to it. See DEPLOY.md.
+ */
+export const dynamic = 'force-dynamic';
 
 export default async function HomePage() {
   const [home, committees, days, pricing, settings] = await Promise.all([

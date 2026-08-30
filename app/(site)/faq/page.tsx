@@ -4,7 +4,11 @@ import { getFaqs } from '@/lib/content';
 import { FaqAccordion } from '@/components/site/FaqAccordion';
 import { Reveal } from '@/components/ui/Reveal';
 
-export const revalidate = 60;
+/*
+ * Rendered per request rather than prerendered: this page reads from Postgres,
+ * and the build container has no route to it. See DEPLOY.md.
+ */
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'FAQ',

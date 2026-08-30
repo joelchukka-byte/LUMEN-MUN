@@ -9,24 +9,18 @@ import {
   LockSimpleIcon,
   UserIcon,
 } from '@phosphor-icons/react/dist/ssr';
-import { getCommittee, getCommittees, getCommitteeDocuments } from '@/lib/content';
+import { getCommittee, getCommitteeDocuments } from '@/lib/content';
 import { currentDelegate } from '@/lib/auth';
 import { imageOr } from '@/lib/image';
 import { Reveal } from '@/components/ui/Reveal';
 
-export const revalidate = 60;
+/*
+ * Rendered per request rather than prerendered: this page reads from Postgres,
+ * and the build container has no route to it. See DEPLOY.md.
+ */
+export const dynamic = 'force-dynamic';
 
 type Props = { params: Promise<{ slug: string }> };
-
-export async function generateStaticParams() {
-  try {
-    const committees = await getCommittees();
-    return committees.map((c) => ({ slug: c.slug }));
-  } catch (error) {
-    console.warn('[build] committee slugs unavailable, rendering on demand:', error);
-    return [];
-  }
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
