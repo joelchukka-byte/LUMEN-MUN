@@ -110,7 +110,6 @@ export default async function RegisterPage({ searchParams }: Props) {
                   slug: c.slug,
                   name: c.name,
                   code: c.code,
-                  level: c.level,
                 }))}
                 baseFee={pricing.baseAmount}
                 accommodationFee={pricing.accommodationAmount}

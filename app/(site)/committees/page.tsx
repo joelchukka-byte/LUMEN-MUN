@@ -31,8 +31,9 @@ export default async function CommitteesPage() {
             {embargoed > 0 && <span className="chip chip--accent">Agendas under embargo</span>}
           </div>
           <p className="lede page-head__lede">
-            Councils spanning global security, human rights and Indian politics. Study guides drop
-            with the agenda announcement; allocations follow within a week of registration close.
+            Two UN bodies, a state assembly, a press corps, and two committees you will not find
+            at another conference. Study guides drop with the agenda announcement; allocations
+            follow within a week of registration close.
           </p>
         </div>
       </section>
@@ -62,9 +63,7 @@ export default async function CommitteesPage() {
                   </h2>
 
                   <div className="committee-card__meta" style={{ marginBottom: '1.25rem' }}>
-                    <span className="chip">{c.level}</span>
                     <span className="chip">{c.code}</span>
-                    {c.seats > 0 && <span className="chip num">{c.seats} seats</span>}
                   </div>
 
                   <p className="body">{c.blurb}</p>

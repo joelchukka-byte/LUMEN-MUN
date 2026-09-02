@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     template: '%s · LUMEN MUN',
   },
   description:
-    'LUMEN MUN is the inaugural Model United Nations conference of Guntur. Three hundred delegates, three committees, three days.',
+    'LUMEN MUN is the inaugural Model United Nations conference of Guntur. Three hundred delegates, six committees, three days.',
   openGraph: {
     type: 'website',
     siteName: 'LUMEN MUN',
     title: 'LUMEN MUN · Edition I, Guntur',
     description:
-      'The inaugural Model United Nations conference of Guntur. Three hundred delegates, three committees, three days.',
+      'The inaugural Model United Nations conference of Guntur. Three hundred delegates, six committees, three days.',
     images: ['/img/crest.jpg'],
   },
   twitter: { card: 'summary_large_image' },

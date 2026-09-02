@@ -75,9 +75,7 @@ export default async function CommitteePage({ params }: Props) {
               <h1 className="h1">{committee.name}</h1>
 
               <div className="committee-card__meta" style={{ margin: '1.5rem 0' }}>
-                <span className="chip">{committee.level}</span>
                 <span className="chip">{committee.code}</span>
-                {committee.seats > 0 && <span className="chip num">{committee.seats} seats</span>}
               </div>
 
               <p className="lede">{committee.blurb}</p>

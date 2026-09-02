@@ -8,7 +8,7 @@ import { GRADES, EXPERIENCE_LEVELS, DELEGATION_SIZES } from '@/lib/validation';
 import { rupees } from '@/lib/format';
 import { PaymentPanel } from './PaymentPanel';
 
-type Committee = { id: number; slug: string; name: string; code: string; level: string };
+type Committee = { id: number; slug: string; name: string; code: string };
 
 type Props = {
   committees: Committee[];

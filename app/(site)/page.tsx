@@ -83,7 +83,7 @@ export default async function HomePage() {
             <RevealItem className="figure">
               <p className="figure__value num">{committees.length}</p>
               <p className="figure__label">Committees</p>
-              <p className="figure__note">Security, rights, Indian politics</p>
+              <p className="figure__note">UN bodies, regional politics, press</p>
             </RevealItem>
             <RevealItem className="figure">
               <p className="figure__value num">{days.length}</p>
@@ -131,7 +131,7 @@ export default async function HomePage() {
             <div>
               <p className="label label--accent">Committees</p>
               <h2 className="h2 section-head__title" style={{ marginTop: '0.75rem' }}>
-                Three councils, one floor each.
+                Six committees, one floor each.
               </h2>
             </div>
             <Link className="arrow-link" href="/committees">
@@ -154,8 +154,7 @@ export default async function HomePage() {
                   </div>
                   <div className="card__body">
                     <div className="committee-card__meta">
-                      <span className="chip">{lead.level}</span>
-                      {lead.seats > 0 && <span className="micro num">{lead.seats} seats</span>}
+                      <span className="chip">{lead.code}</span>
                     </div>
                     <h3 className="h3 committee-card__title">{lead.name}</h3>
                     <p className="body-sm">{lead.blurb}</p>
@@ -178,7 +177,7 @@ export default async function HomePage() {
                   </div>
                   <div className="card__body">
                     <div className="committee-card__meta">
-                      <span className="chip">{c.level}</span>
+                      <span className="chip">{c.code}</span>
                     </div>
                     <h3 className="h3 committee-card__title">{c.name}</h3>
                     <p className="body-sm">{c.blurb}</p>
